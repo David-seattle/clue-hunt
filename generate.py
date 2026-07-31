@@ -172,9 +172,8 @@ PAGES = [
             "answers": ["one step closer", "closer"],
             "placeholder": "three words",
             "hint": "These people sparkle on the peninsula.",
-            "unlocked_hint": "When others need a chair, yers be within reach.",
-            "unlocked": ("One step closer&hellip; now look aloft! I spin above it all like a "
-                         "crow's nest, and no one ever checks me back."),
+            "unlocked_hint": "A swarthy mate like you needs no chair.",
+            "unlocked": "One step closer&hellip; the crow's nest is often untouched.",
         },
         "layout": ("center", "center", -1.2, 86, 60),
         "bg": (100, 100),
