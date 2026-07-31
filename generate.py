@@ -337,6 +337,9 @@ GATE_JS = """<script>
   var input = document.getElementById('answer');
   var wrong = document.getElementById('wrong');
   var reveal = document.getElementById('reveal');
+  if (new URLSearchParams(location.search).has('reset')) {{
+    try {{ localStorage.removeItem(key); }} catch (e) {{}}
+  }}
   function normalize(s) {{ return s.toLowerCase().replace(/[^a-z0-9]/g, ''); }}
   function unlock() {{
     form.hidden = true;
