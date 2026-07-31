@@ -2,6 +2,10 @@
 """Generate the pirate treasure-hunt pages into c/<slug>/index.html.
 
 Edit PAGES below, re-run `python3 generate.py`, commit and push.
+
+Design: the full-bleed illustrated map is the page. Each stop pins a small torn
+note at a different position/tilt, with a red thread leading to an X drawn at a
+different spot on the map, so the trail appears to move across the chart.
 """
 import html
 import pathlib
@@ -29,33 +33,36 @@ KEYS = {
     "877274df": "0dfaadfe3481",
 }
 
-# hide_at: where the physical QR for this page gets hidden (label on the print sheet).
+# layout: (note_h, note_v, tilt_deg, x_pct, y_pct) — note grid position, note tilt,
+# and where the map X (thread target) sits in the viewport. x/y None = no X (decoys).
+# bg: which part of the square map illustration the viewport crops to.
 PAGES = [
     {
         "slug": "ee3f9111",
         "hide_at": "Start card (hand to Brandon)",
         "mark": "I",
-        "icon": "☠️",
         "title": "The Voyage Begins",
         "flavor": ("Ahoy, Brandon! Yer birthday treasure lies buried about this house. "
                    "Follow the map, solve the riddles, and claim yer plunder. "
                    "Stops: unknown. Booty: plentiful. Mutiny: discouraged."),
         "riddle": "I'm a <em>quiet</em> Italian, ticklish, and not your boyfriend.",
+        "layout": ("center", "start", -2.4, 33, 82),
+        "bg": (0, 0),
     },
     {
         "slug": "d13e91a0",
         "hide_at": "Piano (in the keys or bench)",
         "mark": "II",
-        "icon": "🧭",
         "title": "Well Navigated, Matey",
         "flavor": "The keys sang true.",
         "riddle": "Find David at his fittest.",
+        "layout": ("end", "start", 1.8, 18, 72),
+        "bg": (50, 0),
     },
     {
         "slug": "bd0cc471",
         "hide_at": "David statue",
         "mark": "III",
-        "icon": "🏺",
         "title": "Booty the First!",
         "gift": {
             "name": "Certificate o' the Lamplighter",
@@ -65,30 +72,33 @@ PAGES = [
         },
         "riddle": ("There be a thin mouth in the wall that swallows whatever strangers slip it. "
                    "It never chews &mdash; and today its belly holds more than usual."),
+        "layout": ("center", "center", -1.5, 78, 16),
+        "bg": (100, 0),
     },
     {
         "slug": "211bd549",
         "hide_at": "Mailbox",
         "mark": "IV",
-        "icon": "📜",
         "title": "The Mail Run",
         "flavor": "No stamps needed where ye're goin'.",
         "riddle": "A voyage like this calls for a draught o' mead. Bottoms up, sailor.",
+        "layout": ("start", "start", 2.2, 72, 78),
+        "bg": (100, 50),
     },
     {
         "slug": "7fd44344",
         "hide_at": "Inside a mug (cupboard)",
         "mark": "V",
-        "icon": "🍺",
         "title": "Bottoms Up!",
         "flavor": "Ye drained the tankard and found the truth at the bottom, like all good pirates.",
         "riddle": "Yer next clue lies wrapped and rolled, chillin' quietly with its identical siblings.",
+        "layout": ("end", "center", -1.8, 22, 18),
+        "bg": (50, 50),
     },
     {
         "slug": "4c919102",
         "hide_at": "Tortilla bag (fridge/pantry)",
         "mark": "VI",
-        "icon": "🗝️",
         "title": "A Test o' Wits",
         "flavor": "Answer true, or walk the plank:",
         "gate": {
@@ -97,12 +107,13 @@ PAGES = [
             "placeholder": "one word",
             "unlocked": "Now find where red things go to ruin white things.",
         },
+        "layout": ("center", "start", 1.2, 80, 82),
+        "bg": (0, 50),
     },
     {
         "slug": "a8120a3f",
         "hide_at": "Washer (inside the drum)",
         "mark": "VII",
-        "icon": "⚓",
         "title": "A Matter o' Duty",
         "flavor": "Cast yer mind back to Saturday, January 17th, 2026. Ye were there.",
         "gate": {
@@ -113,22 +124,24 @@ PAGES = [
             "unlocked": ("Some souls would relive an ordinary day just to get it right. "
                          "We watched him do it. Yer clue sleeps in his case."),
         },
+        "layout": ("start", "center", -2.0, 82, 22),
+        "bg": (0, 100),
     },
     {
         "slug": "02c7edda",
         "hide_at": "About Time DVD case",
         "mark": "VIII",
-        "icon": "⏳",
         "title": "About Time, Sailor",
         "flavor": "A fine film, a finer memory.",
         "riddle": ("Yer next clue stowed away inside a different game entirely &mdash; "
                    "boxed, shelved, and waitin' in the dark."),
+        "layout": ("end", "end", 1.6, 28, 14),
+        "bg": (50, 100),
     },
     {
         "slug": "642edf15",
         "hide_at": "Board game (games closet)",
         "mark": "IX",
-        "icon": "🗺️",
         "title": "Booty the Second!",
         "gift": {
             "name": "The Locurio Expedition",
@@ -145,22 +158,24 @@ PAGES = [
             "unlocked": ("One step closer&hellip; now look aloft! I spin above it all like a "
                          "crow's nest, and no one ever checks me back."),
         },
+        "layout": ("center", "center", -1.2, 86, 60),
+        "bg": (100, 100),
     },
     {
         "slug": "84d6146a",
         "hide_at": "Ceiling fan (top of a blade)",
         "mark": "X",
-        "icon": "🌀",
         "title": "The Crow's Nest",
         "flavor": "Ye've climbed the riggin'. Now:",
         "riddle": ("Search where ye'd rather be right now: dead tired, face first, lights out. "
                    "Dig, sailor."),
+        "layout": ("start", "start", 2.4, 70, 66),
+        "bg": (25, 25),
     },
     {
         "slug": "3a260eec",
         "hide_at": "Bed (under the covers)",
         "mark": "XI",
-        "icon": "🪂",
         "title": "Booty the Third: Ye're Going FLYING",
         "gift": {
             "name": "iFLY Indoor Skydiving &mdash; Seattle",
@@ -171,12 +186,13 @@ PAGES = [
         "riddle": ("Yer final treasure can't be boxed, buried, or hidden. It be warm, it be yours, "
                    "and it's been pacin' the deck pretendin' not to watch ye this whole voyage. "
                    "Go claim it."),
+        "layout": ("center", "center", -1.6, 20, 84),
+        "bg": (75, 25),
     },
     {
         "slug": "ed471176",
         "hide_at": "Pinned to David's shirt",
-        "mark": "X&nbsp;marks&nbsp;the&nbsp;spot",
-        "icon": "❌",
+        "mark": "&#10008;",
         "title": "The Captain's Voucher",
         "finale": True,
         "gift": {
@@ -185,30 +201,35 @@ PAGES = [
             "fineprint": "Redeemable immediately. No expiration. X marks the spot.",
         },
         "closing": "Happy Birthday, Brandon. &mdash; Yer Captain",
+        "layout": ("center", "center", 0.8, 50, 90),
+        "bg": (50, 75),
     },
     {
         "slug": "0b94076d",
         "hide_at": "Elliptical (decoy)",
         "decoy": True,
-        "icon": "🦜",
         "title": "Arr, a Sweaty Guess!",
         "flavor": "Wrong David &mdash; this one skips leg day. Back to the hunt, ye scallywag.",
+        "layout": ("end", "start", -3.0, None, None),
+        "bg": (25, 75),
     },
     {
         "slug": "6ef5d9a2",
         "hide_at": "Anywhere (decoy A)",
         "decoy": True,
-        "icon": "🪵",
         "title": "Driftwood",
         "flavor": "Ye found&hellip; absolutely nothin'. This QR code be driftwood. Sail on.",
+        "layout": ("center", "center", 2.6, None, None),
+        "bg": (75, 75),
     },
     {
         "slug": "877274df",
         "hide_at": "Anywhere (decoy B)",
         "decoy": True,
-        "icon": "👁️",
         "title": "A Decoy, Arr",
         "flavor": "The house be mockin' ye. It knows what ye did.",
+        "layout": ("start", "end", -2.2, None, None),
+        "bg": (50, 25),
     },
 ]
 
@@ -224,22 +245,27 @@ HEAD = """<!DOCTYPE html>
 <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../style.css">
 </head>
-<body{body_class}>
-<main class="parchment" style="--mx:{mx}%;--my:{my}%">
+<body{body_class} style="--bx:{bx}%;--by:{by}%">
+<div id="content">
 """
 
-FOOT = """</main>
-<aside class="parchment" id="sealed" hidden>
-  <div class="icon" aria-hidden="true">&#128274;</div>
-  <div class="eyebrow">Brandon&rsquo;s Birthday Treasure Hunt</div>
-  <h1>This Scroll Be Sealed</h1>
-  <p class="flavor">The wax holds fast. Only the true mark breaks it &mdash; go scan a proper QR code, ye sneaky dog.</p>
-</aside>
+SEALED = """</div>
+</div>
+<div class="scene" id="sealed-scene" hidden>
+  <div class="note-wrap">
+    <div class="pin"><span>&#128274;</span></div>
+    <main class="note">
+      <div class="eyebrow">Brandon&rsquo;s Treasure Hunt</div>
+      <h1>This Scroll Be Sealed</h1>
+      <p class="riddle">The wax holds fast. Only the true mark breaks it &mdash; go scan a proper QR code, ye sneaky dog.</p>
+    </main>
+  </div>
+</div>
 <script>
 (function () {
   if (new URLSearchParams(location.search).get('k') !== 'PAGE_KEY') {
-    document.querySelector('main').hidden = true;
-    document.getElementById('sealed').hidden = false;
+    document.getElementById('content').hidden = true;
+    document.getElementById('sealed-scene').hidden = false;
   }
 })();
 </script>
@@ -272,30 +298,38 @@ GATE_JS = """<script>
 </script>
 """
 
-
-# Serpentine walk across the shared map, so consecutive stops show adjacent
-# fragments of one big chart. Decoys get leftover mid-map fragments.
-TRAIL_FRAGMENTS = [(0, 0), (33, 0), (66, 0), (100, 0), (100, 50), (66, 50),
-                   (33, 50), (0, 50), (0, 100), (33, 100), (66, 100), (100, 100)]
-DECOY_FRAGMENTS = [(50, 25), (25, 75), (75, 75)]
+# Approximate viewport-percent center of the note for each grid slot, used as the
+# thread's starting point.
+NOTE_ANCHOR_H = {"start": 26, "center": 50, "end": 74}
+NOTE_ANCHOR_V = {"start": 30, "center": 48, "end": 62}
 
 
-def fragment_for(page):
-    decoys = [p for p in PAGES if p.get("decoy")]
-    if page.get("decoy"):
-        return DECOY_FRAGMENTS[decoys.index(page) % len(DECOY_FRAGMENTS)]
-    trail = [p for p in PAGES if not p.get("decoy")]
-    return TRAIL_FRAGMENTS[trail.index(page) % len(TRAIL_FRAGMENTS)]
+def thread_svg(layout):
+    h, v, tilt, xx, xy = layout
+    if xx is None:
+        return ""
+    nx, ny = NOTE_ANCHOR_H[h], NOTE_ANCHOR_V[v]
+    # Bow the thread sideways so it drapes rather than shooting straight.
+    mx, my = (nx + xx) / 2 + (10 if tilt < 0 else -10), (ny + xy) / 2
+    path = f"M{nx},{ny} Q{mx:.0f},{my:.0f} {xx},{xy}"
+    return (f'<svg class="thread" viewBox="0 0 100 100" preserveAspectRatio="none" '
+            f'aria-hidden="true"><path d="{path}" vector-effect="non-scaling-stroke"/></svg>\n'
+            f'<div class="xmark" style="left:{xx}%;top:{xy}%">&#10008;</div>\n')
 
 
 def render(page):
+    h, v, tilt, xx, xy = page["layout"]
+    bx, by = page["bg"]
     body_class = ' class="decoy-page"' if page.get("decoy") else ""
-    mx, my = fragment_for(page)
-    out = [HEAD.format(title=html.escape(page["title"]), body_class=body_class, mx=mx, my=my)]
+    wide = " note-wide" if page.get("gift") or page.get("gate") else ""
+    out = [HEAD.format(title=html.escape(page["title"]), body_class=body_class, bx=bx, by=by)]
+    out.append(thread_svg(page["layout"]))
+    out.append(f'<div class="scene" style="--jc:{h};--ai:{v}">\n')
+    out.append(f'<div class="note-wrap" style="--tilt:{tilt}deg">\n')
     if page.get("mark"):
-        out.append(f'  <div class="seal"><span>{page["mark"]}</span></div>\n')
-    out.append(f'  <div class="icon" aria-hidden="true">{page["icon"]}</div>\n')
-    out.append('  <div class="eyebrow">Brandon&rsquo;s Birthday Treasure Hunt</div>\n')
+        out.append(f'  <div class="pin"><span>{page["mark"]}</span></div>\n')
+    out.append(f'  <main class="note{wide}">\n')
+    out.append('  <div class="eyebrow">Brandon&rsquo;s Treasure Hunt</div>\n')
     out.append(f'  <h1>{page["title"]}</h1>\n')
     if page.get("flavor"):
         out.append(f'  <p class="flavor">{page["flavor"]}</p>\n')
@@ -309,7 +343,6 @@ def render(page):
         out.append('  </section>\n')
     if page.get("gate"):
         gt = page["gate"]
-        out.append('  <div class="rope"></div>\n')
         out.append(f'  <p class="riddle">{gt["question"]}</p>\n')
         out.append('  <form id="gate">\n')
         out.append(f'    <input id="answer" type="text" placeholder="{gt["placeholder"]}" '
@@ -318,16 +351,17 @@ def render(page):
         out.append('    <p id="wrong" hidden>Blimey, that be wrong. Try again.</p>\n')
         out.append('  </form>\n')
         out.append('  <div id="reveal" hidden>\n')
-        out.append('    <div class="booty-label">The way forward:</div>\n')
+        out.append('    <div class="label">The way forward</div>\n')
         out.append(f'    <p class="riddle">{gt["unlocked"]}</p>\n')
         out.append('  </div>\n')
     elif page.get("riddle"):
-        out.append('  <div class="rope"></div>\n')
-        out.append('    <div class="booty-label">Yer next headin&rsquo;:</div>\n')
+        if page.get("gift"):
+            out.append('    <div class="label">Yer next headin&rsquo;</div>\n')
         out.append(f'  <p class="riddle">{page["riddle"]}</p>\n')
     if page.get("closing"):
         out.append(f'  <p class="closing">{page["closing"]}</p>\n')
-    out.append(FOOT)
+    out.append('  </main>\n</div>\n')
+    out.append(SEALED)
     html_text = "".join(out).replace("PAGE_KEY", KEYS[page["slug"]])
     if page.get("gate"):
         answers = "[" + ", ".join(f'"{a.replace(" ", "")}"' for a in page["gate"]["answers"]) + "]"

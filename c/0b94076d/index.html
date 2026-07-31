@@ -10,24 +10,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../style.css">
 </head>
-<body class="decoy-page">
-<main class="parchment" style="--mx:50%;--my:25%">
-  <div class="icon" aria-hidden="true">🦜</div>
-  <div class="eyebrow">Brandon&rsquo;s Birthday Treasure Hunt</div>
+<body class="decoy-page" style="--bx:25%;--by:75%">
+<div id="content">
+<div class="scene" style="--jc:end;--ai:start">
+<div class="note-wrap" style="--tilt:-3.0deg">
+  <main class="note">
+  <div class="eyebrow">Brandon&rsquo;s Treasure Hunt</div>
   <h1>Arr, a Sweaty Guess!</h1>
   <p class="flavor">Wrong David &mdash; this one skips leg day. Back to the hunt, ye scallywag.</p>
-</main>
-<aside class="parchment" id="sealed" hidden>
-  <div class="icon" aria-hidden="true">&#128274;</div>
-  <div class="eyebrow">Brandon&rsquo;s Birthday Treasure Hunt</div>
-  <h1>This Scroll Be Sealed</h1>
-  <p class="flavor">The wax holds fast. Only the true mark breaks it &mdash; go scan a proper QR code, ye sneaky dog.</p>
-</aside>
+  </main>
+</div>
+</div>
+</div>
+<div class="scene" id="sealed-scene" hidden>
+  <div class="note-wrap">
+    <div class="pin"><span>&#128274;</span></div>
+    <main class="note">
+      <div class="eyebrow">Brandon&rsquo;s Treasure Hunt</div>
+      <h1>This Scroll Be Sealed</h1>
+      <p class="riddle">The wax holds fast. Only the true mark breaks it &mdash; go scan a proper QR code, ye sneaky dog.</p>
+    </main>
+  </div>
+</div>
 <script>
 (function () {
   if (new URLSearchParams(location.search).get('k') !== '71d2cc698190') {
-    document.querySelector('main').hidden = true;
-    document.getElementById('sealed').hidden = false;
+    document.getElementById('content').hidden = true;
+    document.getElementById('sealed-scene').hidden = false;
   }
 })();
 </script>

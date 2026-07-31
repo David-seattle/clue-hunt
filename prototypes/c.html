@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prototype C — Rolled Scroll at Night</title>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* A scroll unrolled against the night sea: rolled wooden rods top and bottom,
+   parchment between them, whole chart visible, moonlit. */
+body {
+  font-family: 'IM Fell English', Georgia, serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+  background:
+    radial-gradient(circle at 78% 14%, rgba(226, 233, 255, 0.18) 0%, transparent 9%),
+    radial-gradient(circle at 78% 14%, rgba(226, 233, 255, 0.10) 0%, transparent 16%),
+    radial-gradient(ellipse at 50% 130%, #1d3446 0%, #14222e 55%, #0c161f 100%);
+  color: #3a2a12;
+}
+
+.scroll { position: relative; width: min(36rem, 100%); }
+
+/* wooden rollers */
+.scroll::before, .scroll::after {
+  content: '';
+  position: absolute;
+  left: -2.2rem;
+  right: -2.2rem;
+  height: 1.5rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(180deg, #6b4423, #3d2410 70%, #2a1808);
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+.scroll::before { top: -0.75rem; }
+.scroll::after { bottom: -0.75rem; }
+
+.sheet {
+  position: relative;
+  text-align: center;
+  padding: 3.4rem 2.4rem 3rem;
+  background:
+    radial-gradient(circle at 85% 8%, rgba(122, 82, 32, 0.25), transparent 12%),
+    radial-gradient(circle at 12% 90%, rgba(122, 82, 32, 0.2), transparent 14%),
+    url("../map.svg") center / 112% no-repeat,
+    linear-gradient(180deg, #d9c592 0%, #ecdcb2 12%, #ecdcb2 88%, #d9c592 100%);
+  /* slight curl shading at the rollers */
+  box-shadow:
+    inset 0 1.4rem 1.6rem rgba(58, 36, 12, 0.35),
+    inset 0 -1.4rem 1.6rem rgba(58, 36, 12, 0.35),
+    0 1.6rem 3rem rgba(0, 0, 0, 0.65);
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #8a6420;
+  margin-bottom: 1rem;
+}
+
+.stopmark {
+  font-family: 'Pirata One', cursive;
+  color: #f3e0c8;
+  background: radial-gradient(circle at 35% 30%, #b04530, #8c2b1a 60%, #571a0e);
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin: 0 auto 1rem;
+  box-shadow: 0 0.25rem 0.6rem rgba(0, 0, 0, 0.4);
+  transform: rotate(-5deg);
+}
+
+h1 {
+  font-family: 'Pirata One', cursive;
+  font-weight: 400;
+  font-size: clamp(2.3rem, 7vw, 3.1rem);
+  line-height: 1.05;
+  color: #7c2413;
+  margin-bottom: 1.1rem;
+  text-shadow: 0 1px 0 rgba(255, 245, 220, 0.5);
+}
+
+.flavor { font-size: 1.15rem; font-style: italic; line-height: 1.65; color: #64491f; }
+
+.divider {
+  margin: 1.6rem auto;
+  width: 70%;
+  height: 1px;
+  position: relative;
+  background: linear-gradient(90deg, transparent, rgba(74, 46, 14, 0.5) 16%,
+    rgba(74, 46, 14, 0.5) 43%, transparent 46%, transparent 54%,
+    rgba(74, 46, 14, 0.5) 57%, rgba(74, 46, 14, 0.5) 84%, transparent);
+}
+
+.divider::after {
+  content: '\2715';
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  color: #8c2b1a;
+  font-size: 1.1rem;
+}
+
+.label {
+  font-size: 0.78rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #8c2b1a;
+  margin-bottom: 0.7rem;
+}
+
+.riddle { font-size: 1.4rem; font-style: italic; line-height: 1.7; }
+.riddle em { font-style: normal; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="scroll">
+  <main class="sheet">
+    <div class="stopmark">I</div>
+    <div class="eyebrow">Brandon&rsquo;s Birthday Treasure Hunt</div>
+    <h1>The Voyage Begins</h1>
+    <p class="flavor">Ahoy, Brandon! Yer birthday treasure lies buried about this house.
+    Follow the map, solve the riddles, and claim yer plunder.
+    Stops: unknown. Booty: plentiful. Mutiny: discouraged.</p>
+    <div class="divider"></div>
+    <div class="label">Yer next headin&rsquo;</div>
+    <p class="riddle">I'm a <em>quiet</em> Italian, ticklish, and not your boyfriend.</p>
+  </main>
+</div>
+</body>
+</html>

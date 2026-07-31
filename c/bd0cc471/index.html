@@ -10,11 +10,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../style.css">
 </head>
-<body>
-<main class="parchment" style="--mx:66%;--my:0%">
-  <div class="seal"><span>III</span></div>
-  <div class="icon" aria-hidden="true">🏺</div>
-  <div class="eyebrow">Brandon&rsquo;s Birthday Treasure Hunt</div>
+<body style="--bx:100%;--by:0%">
+<div id="content">
+<svg class="thread" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50,48 Q74,32 78,16" vector-effect="non-scaling-stroke"/></svg>
+<div class="xmark" style="left:78%;top:16%">&#10008;</div>
+<div class="scene" style="--jc:center;--ai:center">
+<div class="note-wrap" style="--tilt:-1.5deg">
+  <div class="pin"><span>III</span></div>
+  <main class="note note-wide">
+  <div class="eyebrow">Brandon&rsquo;s Treasure Hunt</div>
   <h1>Booty the First!</h1>
   <section class="booty">
     <div class="booty-label">&#9760; Booty Unlocked &#9760;</div>
@@ -22,21 +26,27 @@
     <p>One bedside lamp, restored to full workin' glory by yer ship's engineer. Redeemable anytime.</p>
     <p class="fineprint">Labor guaranteed by a man with a multimeter.</p>
   </section>
-  <div class="rope"></div>
-    <div class="booty-label">Yer next headin&rsquo;:</div>
+    <div class="label">Yer next headin&rsquo;</div>
   <p class="riddle">There be a thin mouth in the wall that swallows whatever strangers slip it. It never chews &mdash; and today its belly holds more than usual.</p>
-</main>
-<aside class="parchment" id="sealed" hidden>
-  <div class="icon" aria-hidden="true">&#128274;</div>
-  <div class="eyebrow">Brandon&rsquo;s Birthday Treasure Hunt</div>
-  <h1>This Scroll Be Sealed</h1>
-  <p class="flavor">The wax holds fast. Only the true mark breaks it &mdash; go scan a proper QR code, ye sneaky dog.</p>
-</aside>
+  </main>
+</div>
+</div>
+</div>
+<div class="scene" id="sealed-scene" hidden>
+  <div class="note-wrap">
+    <div class="pin"><span>&#128274;</span></div>
+    <main class="note">
+      <div class="eyebrow">Brandon&rsquo;s Treasure Hunt</div>
+      <h1>This Scroll Be Sealed</h1>
+      <p class="riddle">The wax holds fast. Only the true mark breaks it &mdash; go scan a proper QR code, ye sneaky dog.</p>
+    </main>
+  </div>
+</div>
 <script>
 (function () {
   if (new URLSearchParams(location.search).get('k') !== 'fbded66a2206') {
-    document.querySelector('main').hidden = true;
-    document.getElementById('sealed').hidden = false;
+    document.getElementById('content').hidden = true;
+    document.getElementById('sealed-scene').hidden = false;
   }
 })();
 </script>

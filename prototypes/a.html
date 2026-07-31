@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prototype A — Captain's Table</title>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* The map lies on a dark captain's table: wood grain, lantern-light vignette. */
+body {
+  font-family: 'IM Fell English', Georgia, serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(255, 190, 90, 0.14), transparent 65%),
+    repeating-linear-gradient(93deg,
+      #2b1d10 0px, #332414 22px, #2b1d10 45px, #241708 90px, #2f2012 130px),
+    #241708;
+}
+
+.sheet {
+  position: relative;
+  width: min(37rem, 100%);
+  padding: 4.2rem 2.6rem 3rem;
+  color: #3a2a12;
+  text-align: center;
+  transform: rotate(-1.2deg);
+  /* Torn/deckled edge */
+  clip-path: polygon(
+    1.2% 3%, 6% 0.6%, 14% 2.2%, 24% 0.4%, 35% 2.6%, 46% 0.8%, 57% 2.4%, 68% 0.5%,
+    78% 2.2%, 88% 0.9%, 96% 2.8%, 99.4% 9%, 98% 18%, 99.6% 30%, 97.9% 43%,
+    99.5% 56%, 98% 68%, 99.6% 80%, 97.8% 91%, 94% 98.8%, 84% 97.4%, 73% 99.5%,
+    61% 97.6%, 49% 99.4%, 37% 97.5%, 26% 99.6%, 15% 97.8%, 6% 99.2%, 1% 95%,
+    2.2% 84%, 0.5% 72%, 2.4% 59%, 0.6% 46%, 2.2% 33%, 0.4% 20%, 2% 9%);
+  background:
+    /* stains and age spots */
+    radial-gradient(circle at 82% 12%, rgba(122, 82, 32, 0.30), transparent 12%),
+    radial-gradient(circle at 15% 78%, rgba(122, 82, 32, 0.24), transparent 16%),
+    radial-gradient(circle at 90% 85%, rgba(94, 60, 22, 0.28), transparent 14%),
+    radial-gradient(circle at 8% 8%, rgba(94, 60, 22, 0.20), transparent 12%),
+    radial-gradient(circle at 55% 96%, rgba(122, 82, 32, 0.16), transparent 20%),
+    /* the whole chart, always fully visible */
+    url("../map.svg") center / 108% no-repeat,
+    /* sun-bleached parchment */
+    radial-gradient(ellipse at 45% 25%, #efe0b8 0%, #e3cf9c 55%, #cdb279 100%);
+  box-shadow: 0 2.2rem 3.5rem rgba(0, 0, 0, 0.7);
+}
+
+/* darkened brittle edges, inside the torn clip */
+.sheet::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 4.5rem rgba(74, 46, 14, 0.55);
+}
+
+.seal {
+  position: absolute;
+  top: 0.6rem;
+  right: 1.6rem;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 48% 52% 50% 50% / 52% 48% 52% 48%;
+  background: radial-gradient(circle at 35% 30%, #b04530, #8c2b1a 60%, #571a0e);
+  box-shadow: 0 0.25rem 0.7rem rgba(0, 0, 0, 0.45), inset 0 0 0 4px rgba(255, 235, 210, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(6deg);
+}
+
+.seal span { font-family: 'Pirata One', cursive; font-size: 1.3rem; color: #f3e0c8; }
+
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #8a6420;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-family: 'Pirata One', cursive;
+  font-weight: 400;
+  font-size: clamp(2.3rem, 7vw, 3.1rem);
+  line-height: 1.05;
+  color: #7c2413;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 1px 0 rgba(255, 245, 220, 0.5);
+}
+
+.flavor { font-size: 1.18rem; font-style: italic; line-height: 1.65; color: #64491f; }
+
+.divider {
+  margin: 1.7rem auto;
+  width: 72%;
+  height: 1px;
+  position: relative;
+  background: linear-gradient(90deg, transparent, rgba(74, 46, 14, 0.5) 16%,
+    rgba(74, 46, 14, 0.5) 43%, transparent 46%, transparent 54%,
+    rgba(74, 46, 14, 0.5) 57%, rgba(74, 46, 14, 0.5) 84%, transparent);
+}
+
+.divider::after {
+  content: '\2715';
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  color: #8c2b1a;
+  font-size: 1.1rem;
+}
+
+.label {
+  font-size: 0.78rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #8c2b1a;
+  margin-bottom: 0.7rem;
+}
+
+.riddle { font-size: 1.42rem; font-style: italic; line-height: 1.7; }
+.riddle em { font-style: normal; font-weight: 700; }
+</style>
+</head>
+<body>
+<main class="sheet">
+  <div class="seal"><span>I</span></div>
+  <div class="eyebrow">Brandon&rsquo;s Birthday Treasure Hunt</div>
+  <h1>The Voyage Begins</h1>
+  <p class="flavor">Ahoy, Brandon! Yer birthday treasure lies buried about this house.
+  Follow the map, solve the riddles, and claim yer plunder.
+  Stops: unknown. Booty: plentiful. Mutiny: discouraged.</p>
+  <div class="divider"></div>
+  <div class="label">Yer next headin&rsquo;</div>
+  <p class="riddle">I'm a <em>quiet</em> Italian, ticklish, and not your boyfriend.</p>
+</main>
+</body>
+</html>

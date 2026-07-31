@@ -10,28 +10,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../style.css">
 </head>
-<body>
-<main class="parchment" style="--mx:33%;--my:0%">
-  <div class="seal"><span>II</span></div>
-  <div class="icon" aria-hidden="true">🧭</div>
-  <div class="eyebrow">Brandon&rsquo;s Birthday Treasure Hunt</div>
+<body style="--bx:50%;--by:0%">
+<div id="content">
+<svg class="thread" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M74,30 Q36,51 18,72" vector-effect="non-scaling-stroke"/></svg>
+<div class="xmark" style="left:18%;top:72%">&#10008;</div>
+<div class="scene" style="--jc:end;--ai:start">
+<div class="note-wrap" style="--tilt:1.8deg">
+  <div class="pin"><span>II</span></div>
+  <main class="note">
+  <div class="eyebrow">Brandon&rsquo;s Treasure Hunt</div>
   <h1>Well Navigated, Matey</h1>
   <p class="flavor">The keys sang true.</p>
-  <div class="rope"></div>
-    <div class="booty-label">Yer next headin&rsquo;:</div>
   <p class="riddle">Find David at his fittest.</p>
-</main>
-<aside class="parchment" id="sealed" hidden>
-  <div class="icon" aria-hidden="true">&#128274;</div>
-  <div class="eyebrow">Brandon&rsquo;s Birthday Treasure Hunt</div>
-  <h1>This Scroll Be Sealed</h1>
-  <p class="flavor">The wax holds fast. Only the true mark breaks it &mdash; go scan a proper QR code, ye sneaky dog.</p>
-</aside>
+  </main>
+</div>
+</div>
+</div>
+<div class="scene" id="sealed-scene" hidden>
+  <div class="note-wrap">
+    <div class="pin"><span>&#128274;</span></div>
+    <main class="note">
+      <div class="eyebrow">Brandon&rsquo;s Treasure Hunt</div>
+      <h1>This Scroll Be Sealed</h1>
+      <p class="riddle">The wax holds fast. Only the true mark breaks it &mdash; go scan a proper QR code, ye sneaky dog.</p>
+    </main>
+  </div>
+</div>
 <script>
 (function () {
   if (new URLSearchParams(location.search).get('k') !== '1d906c9f3f85') {
-    document.querySelector('main').hidden = true;
-    document.getElementById('sealed').hidden = false;
+    document.getElementById('content').hidden = true;
+    document.getElementById('sealed-scene').hidden = false;
   }
 })();
 </script>
