@@ -1,44 +1,99 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200">
-  <g fill="none" stroke="#5c4a2c" stroke-linecap="round">
+  <!-- Sepia chart features -->
+  <g fill="none" stroke="#5c4a2c" stroke-linecap="round" stroke-linejoin="round">
     <!-- chart grid -->
-    <g opacity="0.06" stroke-width="2">
+    <g opacity="0.05" stroke-width="2">
       <path d="M200,0V1200 M400,0V1200 M600,0V1200 M800,0V1200 M1000,0V1200 M1200,0V1200 M1400,0V1200"/>
       <path d="M0,200H1600 M0,400H1600 M0,600H1600 M0,800H1600 M0,1000H1600"/>
     </g>
-    <!-- islands -->
-    <g opacity="0.16" stroke-width="4">
-      <path d="M180,260 C140,180 260,120 340,150 C430,180 460,260 400,320 C340,380 220,340 180,260 Z"/>
-      <path d="M1150,400 C1100,300 1250,240 1350,280 C1450,320 1480,440 1380,500 C1280,560 1200,500 1150,400 Z"/>
-      <path d="M600,900 C550,820 680,760 780,790 C880,820 900,920 800,970 C700,1020 650,980 600,900 Z"/>
+    <!-- rhumb lines radiating from the compass -->
+    <g opacity="0.07" stroke-width="2">
+      <path d="M250,250 L1600,600 M250,250 L1200,1200 M250,250 L1600,0 M250,250 L400,1200"/>
     </g>
-    <!-- island hatching -->
-    <g opacity="0.09" stroke-width="3">
-      <path d="M230,300 l30,20 M280,320 l30,15 M1200,470 l35,20 M1270,500 l35,15 M660,940 l35,18 M730,965 l30,15"/>
+    <!-- compass rose, top-left -->
+    <g opacity="0.4" stroke-width="4">
+      <circle cx="250" cy="250" r="110"/>
+      <circle cx="250" cy="250" r="82"/>
+      <path d="M250,140 L270,230 L250,250 L230,230 Z" fill="#5c4a2c" fill-opacity="0.35"/>
+      <path d="M250,360 L270,270 L250,250 L230,270 Z"/>
+      <path d="M140,250 L230,270 L250,250 L230,230 Z"/>
+      <path d="M360,250 L270,270 L250,250 L270,230 Z"/>
+      <path d="M182,182 L235,235 M318,182 L265,235 M182,318 L235,265 M318,318 L265,265" stroke-width="3"/>
+      <text x="250" y="120" font-size="44" font-family="serif" fill="#5c4a2c" fill-opacity="0.5" stroke="none" text-anchor="middle">N</text>
     </g>
-    <!-- mountains and palm marks -->
-    <g opacity="0.14" stroke-width="4">
-      <path d="M270,230 l25,-40 25,40 M310,240 l25,-40 25,40"/>
-      <path d="M1280,360 q5,-45 10,-55 q-25,10 -35,-5 q20,0 35,5 q15,-15 40,-12 q-25,5 -40,12"/>
-      <path d="M720,860 l20,-35 20,35"/>
+    <!-- island with mountains and palms, top-center -->
+    <g opacity="0.32" stroke-width="4">
+      <path d="M560,260 C540,180 660,120 760,140 C870,160 900,240 850,300 C780,370 600,340 560,260 Z"/>
+      <path d="M640,230 l30,-55 30,55 M690,240 l30,-55 30,55"/>
+      <path d="M600,265 q8,-50 14,-62 q-28,8 -40,-8 q24,-2 40,8 q14,-18 44,-16 q-28,8 -44,16"/>
+      <path d="M585,300 l35,18 M640,318 l35,14 M760,310 l35,-12"/>
     </g>
-    <!-- sea waves -->
-    <g opacity="0.08" stroke-width="3">
-      <path d="M880,180 q20,-15 40,0 q20,15 40,0"/>
-      <path d="M300,620 q20,-15 40,0 q20,15 40,0"/>
-      <path d="M1100,900 q20,-15 40,0 q20,15 40,0"/>
-      <path d="M550,380 q20,-15 40,0 q20,15 40,0"/>
-      <path d="M1350,700 q20,-15 40,0 q20,15 40,0"/>
+    <!-- sailing ship, top-right -->
+    <g opacity="0.38" stroke-width="4">
+      <path d="M1230,255 L1380,255 L1350,295 L1255,295 Z"/>
+      <path d="M1305,255 V140"/>
+      <path d="M1305,148 C1360,168 1360,215 1305,240 Z"/>
+      <path d="M1305,148 L1345,148 L1305,168 Z" fill="#5c4a2c" fill-opacity="0.3"/>
+      <path d="M1200,285 q20,-14 40,0 q20,14 40,0 M1390,285 q20,-14 40,0"/>
     </g>
-    <!-- dotted route -->
-    <path d="M120,1080 C300,900 250,700 420,620 C600,530 700,700 900,640 C1100,580 1150,460 1300,420"
-          opacity="0.22" stroke-width="6" stroke-dasharray="1 22"/>
-    <!-- X marks the spot -->
-    <g opacity="0.3" stroke-width="10">
-      <path d="M1280,400 L1320,440 M1320,400 L1280,440"/>
+    <!-- sea serpent, center-left -->
+    <g opacity="0.32" stroke-width="5">
+      <path d="M150,620 q35,-55 70,0 q35,55 70,0 q35,-55 70,0"/>
+      <path d="M360,620 q18,-35 42,-22 q20,10 12,32 l-20,-8"/>
+      <circle cx="392" cy="608" r="3" fill="#5c4a2c"/>
     </g>
-    <!-- sea serpent -->
-    <g opacity="0.12" stroke-width="4">
-      <path d="M950,1020 q25,-35 50,0 q25,35 50,0 q25,-35 50,0 M1100,1020 q15,-25 30,-15 l-12,18"/>
+    <!-- skull rock, center -->
+    <g opacity="0.32" stroke-width="4">
+      <path d="M740,640 C720,560 790,520 850,540 C910,560 920,630 890,660 L870,690 L760,690 Z"/>
+      <ellipse cx="795" cy="600" rx="16" ry="20" fill="#5c4a2c" fill-opacity="0.3"/>
+      <ellipse cx="850" cy="600" rx="16" ry="20" fill="#5c4a2c" fill-opacity="0.3"/>
+      <path d="M805,655 v14 M825,655 v14 M845,655 v14"/>
+    </g>
+    <!-- shipwreck, center-right -->
+    <g opacity="0.32" stroke-width="4">
+      <path d="M1290,690 L1430,660 L1400,710 L1310,715 Z"/>
+      <path d="M1370,668 L1420,570 M1420,570 L1390,600"/>
+      <path d="M1250,715 q20,-14 40,0 M1440,700 q20,-14 40,0"/>
+    </g>
+    <!-- palm island, bottom-left -->
+    <g opacity="0.32" stroke-width="4">
+      <path d="M170,1010 C160,940 260,900 340,920 C420,940 440,1010 390,1050 C320,1100 200,1080 170,1010 Z"/>
+      <path d="M270,1000 q10,-60 18,-75 q-32,10 -48,-8 q28,-2 48,8 q16,-22 52,-18 q-34,8 -52,18"/>
+      <path d="M200,1040 l38,16 M320,1055 l38,-10"/>
+    </g>
+    <!-- anchor, bottom-center -->
+    <g opacity="0.34" stroke-width="5">
+      <circle cx="800" cy="965" r="14"/>
+      <path d="M800,979 V1085"/>
+      <path d="M770,1005 H830"/>
+      <path d="M755,1050 Q800,1105 845,1050 M755,1050 l-8,18 M845,1050 l8,18"/>
+    </g>
+    <!-- scattered waves -->
+    <g opacity="0.11" stroke-width="3">
+      <path d="M950,120 q20,-15 40,0 q20,15 40,0"/>
+      <path d="M480,470 q20,-15 40,0 q20,15 40,0"/>
+      <path d="M1080,470 q20,-15 40,0 q20,15 40,0"/>
+      <path d="M120,830 q20,-15 40,0 q20,15 40,0"/>
+      <path d="M580,830 q20,-15 40,0 q20,15 40,0"/>
+      <path d="M1050,880 q20,-15 40,0 q20,15 40,0"/>
+      <path d="M1470,180 q20,-15 40,0"/>
+      <path d="M1500,900 q20,-15 40,0"/>
+      <path d="M420,80 q20,-15 40,0"/>
+    </g>
+  </g>
+  <!-- The red route and X, drawn over the sepia chart -->
+  <g fill="none" stroke="#8c2b1a" stroke-linecap="round">
+    <path d="M280,380 C450,430 500,250 620,330 C750,410 1050,180 1230,270
+             C1420,360 1500,500 1400,620 C1300,730 1000,540 870,700
+             C760,830 460,560 320,660 C170,760 190,880 280,980
+             C380,1080 650,1000 800,1090 C950,1170 1180,1040 1300,1010"
+          opacity="0.42" stroke-width="7" stroke-dasharray="20 16"/>
+    <g opacity="0.5" stroke-width="14">
+      <path d="M1320,970 L1390,1040 M1390,970 L1320,1040"/>
+    </g>
+    <!-- treasure chest beside the X -->
+    <g opacity="0.42" stroke-width="4">
+      <path d="M1430,1060 h80 v50 h-80 Z M1430,1060 q40,-34 80,0 M1470,1078 v14"/>
     </g>
   </g>
 </svg>

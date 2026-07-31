@@ -226,14 +226,6 @@ HEAD = """<!DOCTYPE html>
 </head>
 <body{body_class}>
 <main class="parchment" style="--mx:{mx}%;--my:{my}%">
-  <svg class="compass" viewBox="0 0 100 100" aria-hidden="true">
-    <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="1"/>
-    <circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width="0.5"/>
-    <path d="M50 6 L54 46 L50 54 L46 46 Z" fill="currentColor"/>
-    <path d="M50 94 L54 54 L50 46 L46 54 Z" fill="currentColor" opacity="0.5"/>
-    <path d="M6 50 L46 54 L54 50 L46 46 Z" fill="currentColor" opacity="0.5"/>
-    <path d="M94 50 L54 54 L46 50 L54 46 Z" fill="currentColor" opacity="0.5"/>
-  </svg>
 """
 
 FOOT = """</main>

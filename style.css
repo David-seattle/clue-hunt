@@ -31,7 +31,7 @@ body {
   /* Top layer: a fragment of the shared treasure map (each page positions its own
      region via --mx/--my). Bottom layer: the parchment itself. */
   background:
-    url("map.svg") var(--mx, 50%) var(--my, 50%) / 280% no-repeat,
+    url("map.svg") var(--mx, 50%) var(--my, 50%) / 220% no-repeat,
     radial-gradient(ellipse at 30% 20%, #f0e3c0 0%, var(--parchment) 55%, #dcc794 100%);
   /* Uneven radii fake a torn-parchment edge without images. */
   border-radius: 3% 6% 5% 4% / 5% 3% 6% 4%;
@@ -51,17 +51,6 @@ body {
   .parchment { animation: none; }
 }
 
-.compass {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 75%;
-  color: var(--ink-soft);
-  opacity: 0.09;
-  pointer-events: none;
-}
-
-.parchment > *:not(.compass):not(.seal) { position: relative; }
 
 .seal {
   position: absolute;
@@ -138,6 +127,12 @@ h1 {
   font-size: 1.35rem;
   font-style: italic;
   line-height: 1.7;
+}
+
+/* The riddle line is already italic, so <em> must flip to upright bold to be visible. */
+.riddle em {
+  font-style: normal;
+  font-weight: 700;
 }
 
 .booty {
