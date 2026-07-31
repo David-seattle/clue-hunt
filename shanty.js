@@ -143,7 +143,7 @@
   function makeOverlay() {
     var ov = document.createElement('div');
     ov.id = 'furl';
-    ov.innerHTML = '<div class="furl-label">Tap to unfurl yer chart</div>';
+    ov.innerHTML = '<div class="furl-label">Unscroll Yer Map</div>';
     document.body.appendChild(ov);
     document.body.classList.add('furled');
     ov.addEventListener('pointerdown', function () {
