@@ -77,9 +77,9 @@ PAGES = [
                      "Redeemable anytime."),
             "fineprint": "Labor guaranteed by a pirate with a multimeter.",
         },
-        "riddle": ("There be a thin mouth in the wall that swallows whatever strangers slip it. "
-                   "It never chews &mdash; and today its belly holds more than usual."),
-        "hint": "Ye can pay a stranger 82 cents to feed it.",
+        "riddle": ("There be a thin mouth in the wall that swallows whatever strangers put in it. "
+                   "It never bites, and today its belly holds more than usual."),
+        "hint": "Only 82 cents to put yours inside.",
         "layout": ("center", "center", -1.5, 78, 16),
         "bg": (100, 0),
     },
@@ -128,9 +128,9 @@ PAGES = [
         "hide_at": "Washer (inside the drum)",
         "mark": "VII",
         "title": "A Matter o' Duty",
-        "flavor": "Cast yer mind back to Saturday, January 17th, 2026. Ye were there.",
         "gate": {
-            "question": "That ship had a woman on the crew. How many jobs did she have?",
+            "question": ("January 17th, 2026: That ship had a woman on the crew. "
+                         "How many jobs did she have?"),
             "answers": ["one", "1"],
             "placeholder": "how many?",
             "hint": "By Grabthar&rsquo;s hammer&hellip;",
