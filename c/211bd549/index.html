@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The Mail Run</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<main class="parchment">
+  <svg class="compass" viewBox="0 0 100 100" aria-hidden="true">
+    <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="1"/>
+    <circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width="0.5"/>
+    <path d="M50 6 L54 46 L50 54 L46 46 Z" fill="currentColor"/>
+    <path d="M50 94 L54 54 L50 46 L46 54 Z" fill="currentColor" opacity="0.5"/>
+    <path d="M6 50 L46 54 L54 50 L46 46 Z" fill="currentColor" opacity="0.5"/>
+    <path d="M94 50 L54 54 L46 50 L54 46 Z" fill="currentColor" opacity="0.5"/>
+  </svg>
+  <div class="seal"><span>IV</span></div>
+  <div class="icon" aria-hidden="true">📜</div>
+  <div class="eyebrow">Brandon&rsquo;s Birthday Treasure Hunt</div>
+  <h1>The Mail Run</h1>
+  <p class="flavor">No stamps needed where ye're goin'.</p>
+  <div class="rope"></div>
+    <div class="booty-label">Yer next headin&rsquo;:</div>
+  <p class="riddle">A voyage like this calls for a draught o' mead. Fetch yer tankard from the cupboard and drink deep &mdash; bottoms up, sailor.</p>
+</main>
+<aside class="parchment" id="sealed" hidden>
+  <div class="icon" aria-hidden="true">&#128274;</div>
+  <div class="eyebrow">Brandon&rsquo;s Birthday Treasure Hunt</div>
+  <h1>This Scroll Be Sealed</h1>
+  <p class="flavor">The wax holds fast. Only the true mark breaks it &mdash; go scan a proper QR code, ye sneaky dog.</p>
+</aside>
+<script>
+(function () {
+  if (new URLSearchParams(location.search).get('k') !== 'e4ddd11159dd') {
+    document.querySelector('main').hidden = true;
+    document.getElementById('sealed').hidden = false;
+  }
+})();
+</script>
+</body>
+</html>

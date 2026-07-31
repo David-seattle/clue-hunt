@@ -1,51 +1,216 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+:root {
+  --sea: #14222e;
+  --sea-deep: #0c161f;
+  --parchment: #e7d7ae;
+  --parchment-edge: #cdb47c;
+  --ink: #332614;
+  --ink-soft: #5c4a2c;
+  --wax: #8c2b1a;
+  --gold: #a97e2f;
+}
+
 body {
-  font-family: Georgia, 'Times New Roman', serif;
-  background: #1a1423;
-  color: #e8ddc7;
+  font-family: 'IM Fell English', Georgia, serif;
+  background:
+    radial-gradient(ellipse at 50% 120%, #1d3446 0%, var(--sea) 55%, var(--sea-deep) 100%);
+  color: var(--ink);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 2.5rem 1rem;
 }
 
-.card {
-  max-width: 34rem;
+.parchment {
+  position: relative;
+  width: min(34rem, 100%);
   text-align: center;
-  border: 2px solid #b8912f;
-  border-radius: 12px;
-  padding: 3rem 2rem;
-  background: #241b2f;
-  box-shadow: 0 0 40px rgba(184, 145, 47, 0.25);
+  padding: 3.5rem 2rem 2.75rem;
+  background:
+    radial-gradient(ellipse at 30% 20%, #f0e3c0 0%, var(--parchment) 55%, #dcc794 100%);
+  /* Uneven radii fake a torn-parchment edge without images. */
+  border-radius: 3% 6% 5% 4% / 5% 3% 6% 4%;
+  box-shadow:
+    inset 0 0 0 1px rgba(92, 74, 44, 0.25),
+    inset 0 0 3.5rem rgba(92, 74, 44, 0.35),
+    0 1.5rem 3rem rgba(0, 0, 0, 0.55);
+  animation: unfurl 0.7s ease-out;
 }
 
-.badge {
-  font-size: 0.85rem;
-  letter-spacing: 0.3em;
+@keyframes unfurl {
+  from { opacity: 0; transform: scale(0.92) rotate(-1deg); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parchment { animation: none; }
+}
+
+.compass {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 75%;
+  color: var(--ink-soft);
+  opacity: 0.09;
+  pointer-events: none;
+}
+
+.parchment > *:not(.compass) { position: relative; }
+
+.seal {
+  position: absolute;
+  top: -1.4rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+  min-width: 3.4rem;
+  height: 3.4rem;
+  padding: 0 0.6rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #b04530, var(--wax) 60%, #5e1c10);
+  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.4), inset 0 0 0 3px rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seal span {
+  font-family: 'Pirata One', cursive;
+  font-size: 1.15rem;
+  line-height: 1.05;
+  color: #f3e0c8;
+}
+
+.icon { font-size: 2.6rem; margin-bottom: 0.75rem; }
+
+.eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #b8912f;
-  margin-bottom: 1.5rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #f3e9d2;
+  font-family: 'Pirata One', cursive;
+  font-weight: 400;
+  font-size: clamp(2.1rem, 7vw, 2.9rem);
+  line-height: 1.1;
+  margin-bottom: 1.1rem;
+  color: var(--wax);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.flavor {
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.rope {
+  margin: 1.6rem auto;
+  width: 70%;
+  border-top: 3px dashed var(--gold);
+  opacity: 0.55;
 }
 
 .riddle {
-  font-size: 1.25rem;
-  line-height: 1.8;
+  font-size: 1.35rem;
   font-style: italic;
-  white-space: pre-line;
+  line-height: 1.7;
 }
 
-.hint {
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: #8a7f95;
+.booty {
+  margin: 1.6rem auto 0.4rem;
+  padding: 1.5rem 1.25rem;
+  border: 3px dashed var(--gold);
+  border-radius: 6px;
+  background: rgba(255, 250, 235, 0.55);
+  transform: rotate(-0.6deg);
 }
 
-.emoji { font-size: 3rem; margin-bottom: 1rem; }
+.booty-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--wax);
+  margin: 1rem 0 0.6rem;
+}
+
+.booty .booty-label { margin-top: 0; }
+
+.booty h2 {
+  font-family: 'Pirata One', cursive;
+  font-weight: 400;
+  font-size: 1.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.booty p { font-size: 1.1rem; line-height: 1.6; }
+
+.fineprint {
+  margin-top: 0.7rem;
+  font-size: 0.85rem !important;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+#gate { margin-top: 1.1rem; }
+
+#gate input {
+  font-family: inherit;
+  font-size: 1.1rem;
+  width: min(16rem, 100%);
+  padding: 0.55rem 0.9rem;
+  border: 2px solid var(--ink-soft);
+  border-radius: 4px;
+  background: #fdf6e3;
+  color: var(--ink);
+  text-align: center;
+}
+
+#gate button {
+  font-family: 'Pirata One', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
+  margin-top: 0.7rem;
+  padding: 0.5rem 1.8rem;
+  border: 0;
+  border-radius: 4px;
+  background: var(--wax);
+  color: #f3e0c8;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#gate button:hover { background: #a23520; }
+
+#gate input:focus-visible,
+#gate button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+#wrong {
+  margin-top: 0.8rem;
+  font-style: italic;
+  color: var(--wax);
+}
+
+#reveal { animation: unfurl 0.5s ease-out; }
+
+.closing {
+  margin-top: 1.6rem;
+  font-family: 'Pirata One', cursive;
+  font-size: 1.5rem;
+  color: var(--wax);
+}
+
+.decoy-page .parchment {
+  filter: saturate(0.55) brightness(0.92);
+}
