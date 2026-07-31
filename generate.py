@@ -371,6 +371,23 @@ def thread_svg(layout):
 
 
 
+CHEST_SVG = ('<svg class="chest" viewBox="0 0 64 50" aria-hidden="true">'
+             '<g stroke="#5e3f16" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">'
+             '<g stroke="#b98a2e" stroke-width="1.5" opacity="0.75">'
+             '<path d="M32 6 V1 M19 9 L15 5 M45 9 L49 5 M12 15 L7 13 M52 15 L57 13" fill="none"/></g>'
+             '<path d="M12 20 Q12 8 32 8 Q52 8 52 20 L12 20 Z" fill="#8a5a24"/>'
+             '<path d="M14 20 L50 20 L48 24 L16 24 Z" fill="#3a2410"/>'
+             '<circle cx="23" cy="24" r="4" fill="#e3b13c"/>'
+             '<circle cx="32" cy="22" r="4.5" fill="#c9962f"/>'
+             '<circle cx="41" cy="24" r="4" fill="#e3b13c"/>'
+             '<path d="M14 26 H50 V44 H14 Z" fill="#a06a2c"/>'
+             '<path d="M14 34 H50" fill="none"/>'
+             '<path d="M21 26 V44 M43 26 V44" fill="none"/>'
+             '<rect x="28" y="29" width="8" height="9" rx="1.5" fill="#e3b13c"/>'
+             '<circle cx="32" cy="33" r="1.2" fill="#3a2410" stroke="none"/>'
+             '</g></svg>')
+
+
 def hint_html(text):
     return ('  <details class="hint"><summary>Need a hint, sailor?</summary>'
             f'<p>{text}</p></details>\n')
@@ -394,7 +411,8 @@ def render(page):
     if page.get("gift"):
         g = page["gift"]
         out.append('  <section class="booty">\n')
-        out.append('    <div class="booty-label">&#9760; Treasure Found &#9760;</div>\n')
+        out.append(f'    {CHEST_SVG}\n')
+        out.append('    <div class="booty-label">Treasure Found</div>\n')
         out.append(f'    <h2>{g["name"]}</h2>\n')
         out.append(f'    <p>{g["body"]}</p>\n')
         out.append(f'    <p class="fineprint">{g["fineprint"]}</p>\n')

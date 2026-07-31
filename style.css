@@ -273,3 +273,10 @@ h1 {
 }
 
 .decoy-page .note { filter: saturate(0.7) brightness(0.96); }
+
+.chest {
+  width: 3.2rem;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.35rem;
+}
