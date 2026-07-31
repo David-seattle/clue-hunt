@@ -58,27 +58,22 @@
 <script>
 (function () {
   var accepted = ["red"];
-  var key = 'unlocked-' + location.pathname;
   var form = document.getElementById('gate');
   var input = document.getElementById('answer');
   var wrong = document.getElementById('wrong');
   var reveal = document.getElementById('reveal');
-  if (new URLSearchParams(location.search).has('reset')) {
-    try { localStorage.removeItem(key); } catch (e) {}
-  }
   function normalize(s) { return s.toLowerCase().replace(/[^a-z0-9]/g, ''); }
-  function unlock() {
-    form.hidden = true;
-    wrong.hidden = true;
-    reveal.hidden = false;
-    try { localStorage.setItem(key, '1'); } catch (e) {}
-  }
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
-    if (accepted.indexOf(normalize(input.value)) !== -1) { unlock(); }
-    else { wrong.hidden = false; input.select(); }
+    if (accepted.indexOf(normalize(input.value)) !== -1) {
+      form.hidden = true;
+      wrong.hidden = true;
+      reveal.hidden = false;
+    } else {
+      wrong.hidden = false;
+      input.select();
+    }
   });
-  try { if (localStorage.getItem(key)) unlock(); } catch (e) {}
 })();
 </script>
 </body>
