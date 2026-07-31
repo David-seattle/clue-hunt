@@ -35,6 +35,7 @@ KEYS = {
     "2c997fc1": "85664864ea4e",
     "b2855fec": "40c8dfcc7ada",
     "0e346673": "2d898ebbf909",
+    "41067d29": "856816a215fa",
 }
 
 # layout: (note_h, note_v, tilt_deg, x_pct, y_pct) — note grid position, note tilt,
@@ -89,15 +90,27 @@ PAGES = [
         "mark": "IV",
         "title": "The Mail Run",
         "flavor": "No stamps needed where ye're goin'.",
-        "riddle": "A voyage like this calls for a draught o' mead. Bottoms up, sailor.",
-        "hint": "Pour in here, and bottoms up.",
+        "riddle": ("Gaze in the mirror, ye handsome devil. Then open below &mdash; "
+                   "a bird of unusual size holds the key."),
+        "hint": "Open the drawer.",
         "layout": ("start", "start", 2.2, 72, 78),
         "bg": (100, 50),
     },
     {
+        "slug": "41067d29",
+        "hide_at": "Hall tree drawer (front door)",
+        "mark": "V",
+        "title": "A Handsome Pirate Indeed",
+        "flavor": "The mirror never lies, and the drawer never disappoints.",
+        "riddle": "A voyage like this calls for a draught o' mead. Bottoms up, sailor.",
+        "hint": "Pour in here, and bottoms up.",
+        "layout": ("center", "start", 1.4, 25, 72),
+        "bg": (25, 0),
+    },
+    {
         "slug": "7fd44344",
         "hide_at": "Inside a mug (cupboard)",
-        "mark": "V",
+        "mark": "VI",
         "title": "Bottoms Up!",
         "flavor": "Not every tankard holds mead. This one held yer next headin'.",
         "riddle": ("Yer next clue lies waiting to be wrapped or rolled, chillin' quietly "
@@ -109,7 +122,7 @@ PAGES = [
     {
         "slug": "4c919102",
         "hide_at": "Tortilla bag (fridge/pantry)",
-        "mark": "VI",
+        "mark": "VII",
         "title": "A Test o' Wits",
         "flavor": "Answer true, or walk the plank:",
         "gate": {
@@ -126,7 +139,7 @@ PAGES = [
     {
         "slug": "a8120a3f",
         "hide_at": "Washer (inside the drum)",
-        "mark": "VII",
+        "mark": "VIII",
         "title": "A Matter o' Duty",
         "gate": {
             "question": ("January 17th, 2026: That ship had a woman on the crew. "
@@ -144,7 +157,7 @@ PAGES = [
     {
         "slug": "02c7edda",
         "hide_at": "About Time DVD case",
-        "mark": "VIII",
+        "mark": "IX",
         "title": "About Time, Sailor",
         "flavor": "A fine film, a finer memory.",
         "riddle": ("Captain a ship on the hunt for the underwater metal beast. "
@@ -156,7 +169,7 @@ PAGES = [
     {
         "slug": "642edf15",
         "hide_at": "Board game (games closet)",
-        "mark": "IX",
+        "mark": "X",
         "title": "Booty the Second!",
         "gift": {
             "name": "The Locurio Expedition",
@@ -181,7 +194,7 @@ PAGES = [
     {
         "slug": "84d6146a",
         "hide_at": "Ceiling fan (top of a blade)",
-        "mark": "X",
+        "mark": "XI",
         "title": "The Crow's Nest",
         "flavor": "Ye've climbed the riggin'. Now:",
         "riddle": ("Dead tired men tell no tales. Uncover the treasure, or ye'll be "
@@ -193,7 +206,7 @@ PAGES = [
     {
         "slug": "3a260eec",
         "hide_at": "Bed (under the covers)",
-        "mark": "XI",
+        "mark": "XII",
         "title": "Booty the Third!",
         "gift": {
             "name": "iFLY Indoor Skydiving &mdash; Seattle",
