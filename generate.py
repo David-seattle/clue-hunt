@@ -166,7 +166,7 @@ PAGES = [
                           "Mysteries of Noximillian</a> &mdash; date to be chosen by the birthday pirate."),
         },
         "gate": {
-            "question": ("One more riddle before ye go. She's loved ye for a thousand years. "
+            "question": ("One more riddle before ye go. She's loved ye for M years. "
                          "What does every heartbeat bring? (3 words &mdash; consult yer charts, "
                          "or the internet)"),
             "answers": ["one step closer", "closer"],
