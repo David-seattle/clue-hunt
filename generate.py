@@ -360,6 +360,7 @@ GATE_JS = """<script>
       form.hidden = true;
       wrong.hidden = true;
       reveal.hidden = false;
+      if (window.shantyBell) window.shantyBell();
     }} else {{
       wrong.hidden = false;
       input.select();

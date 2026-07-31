@@ -48,6 +48,11 @@
     [B4, 2], [A4, 2], [G4, 2], [Fs4, 2],
     [E4, 5], [0, 1],
   ];
+  /* The chorus begins this many eighths in; from there a quieter second
+     accordion joins a diatonic third below, like the crew coming in. */
+  var CHORUS_AT = 66;
+  var THIRD_BELOW = {76: 72, 74: 71, 72: 69, 71: 67, 69: 66, 67: 64, 66: 62, 64: 60};
+
   /* Chord roots, one per 4 eighths, following Em / Am / B / C / G harmony. */
   var E2 = 40, G2 = 43, A2 = 45, B2 = 47, C3 = 48;
   var BASS = [E2, E2, E2, B2, A2, A2, E2, B2,
@@ -59,7 +64,12 @@
     var t = t0, total = 0, i;
     for (i = 0; i < MELODY.length; i++) {
       var m = MELODY[i][0], beats = MELODY[i][1], dur = beats * EIGHTH;
-      if (m) player.queueWaveTable(ctx, out, LEAD, t, m, dur * 0.95, 0.5);
+      if (m) {
+        player.queueWaveTable(ctx, out, LEAD, t, m, dur * 0.95, 0.5);
+        if (total >= CHORUS_AT && THIRD_BELOW[m]) {
+          player.queueWaveTable(ctx, out, LEAD, t, THIRD_BELOW[m], dur * 0.95, 0.22);
+        }
+      }
       t += dur;
       total += beats;
     }
@@ -102,6 +112,32 @@
       }
     })();
   }
+
+  /* Ship's bell for correct gate answers: two bright strikes of a
+     three-partial sine cluster. Exposed for the gate pages' inline script. */
+  window.shantyBell = function () {
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    if (!ctx) ctx = new AC();
+    if (ctx.state === 'suspended') ctx.resume();
+    var dest = out || ctx.destination;
+    function strike(t0) {
+      var partials = [[830, 0.4], [1245, 0.22], [2075, 0.1]];
+      for (var i = 0; i < partials.length; i++) {
+        var osc = ctx.createOscillator();
+        var g = ctx.createGain();
+        osc.frequency.value = partials[i][0];
+        g.gain.setValueAtTime(partials[i][1], t0);
+        g.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.1);
+        osc.connect(g);
+        g.connect(dest);
+        osc.start(t0);
+        osc.stop(t0 + 1.2);
+      }
+    }
+    strike(ctx.currentTime + 0.02);
+    strike(ctx.currentTime + 0.3);
+  };
 
   /* ---- rolled-scroll intro ---- */
   function makeOverlay() {
