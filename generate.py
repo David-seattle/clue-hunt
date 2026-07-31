@@ -45,7 +45,8 @@ PAGES = [
         "flavor": ("Ahoy, Brandon! Yer birthday treasure lies buried about this house. "
                    "Follow the map, solve the riddles, and claim yer plunder. "
                    "Stops: unknown. Booty: plentiful. Mutiny: discouraged."),
-        "riddle": "I'm a <em>quiet</em> Italian, ticklish, and not your boyfriend.",
+        "riddle": ("The key to your treasure is a <em>quiet</em> Italian, ticklish, "
+                   "but not your boyfriend."),
         "layout": ("center", "start", -2.4, 33, 82),
         "bg": (0, 0),
     },
@@ -68,7 +69,7 @@ PAGES = [
             "name": "Certificate o' the Lamplighter",
             "body": ("One bedside lamp, restored to full workin' glory by yer ship's engineer. "
                      "Redeemable anytime."),
-            "fineprint": "Labor guaranteed by a man with a multimeter.",
+            "fineprint": "Labor guaranteed by a pirate with a multimeter.",
         },
         "riddle": ("There be a thin mouth in the wall that swallows whatever strangers slip it. "
                    "It never chews &mdash; and today its belly holds more than usual."),
@@ -90,8 +91,9 @@ PAGES = [
         "hide_at": "Inside a mug (cupboard)",
         "mark": "V",
         "title": "Bottoms Up!",
-        "flavor": "Ye drained the tankard and found the truth at the bottom, like all good pirates.",
-        "riddle": "Yer next clue lies wrapped and rolled, chillin' quietly with its identical siblings.",
+        "flavor": "Not every tankard holds mead. This one held yer next headin'.",
+        "riddle": ("Yer next clue lies waiting to be wrapped or rolled, chillin' quietly "
+                   "with its identical siblings. Let us see if you can find it."),
         "layout": ("end", "center", -1.8, 22, 18),
         "bg": (50, 50),
     },
@@ -117,8 +119,7 @@ PAGES = [
         "title": "A Matter o' Duty",
         "flavor": "Cast yer mind back to Saturday, January 17th, 2026. Ye were there.",
         "gate": {
-            "question": ("She had ____ job(s) to do on this ship, and she was going to do it. "
-                         "How many?"),
+            "question": "That ship had a woman on the crew. How many jobs did she have?",
             "answers": ["one", "1"],
             "placeholder": "how many?",
             "unlocked": ("Some souls would relive an ordinary day just to get it right. "
@@ -133,8 +134,8 @@ PAGES = [
         "mark": "VIII",
         "title": "About Time, Sailor",
         "flavor": "A fine film, a finer memory.",
-        "riddle": ("Yer next clue stowed away inside a different game entirely &mdash; "
-                   "boxed, shelved, and waitin' in the dark."),
+        "riddle": ("Captain a ship on the hunt for the underwater metal beast. "
+                   "Ye'll need a crew of 2 to 8."),
         "layout": ("end", "end", 1.6, 28, 14),
         "bg": (50, 100),
     },
@@ -147,7 +148,8 @@ PAGES = [
             "name": "The Locurio Expedition",
             "body": ("A treasure hunt hidden inside a treasure hunt: "
                      "Mysteries of Noximillian, an outdoor puzzle adventure. We sail together."),
-            "fineprint": "locurio.com &mdash; date to be chosen by the birthday pirate.",
+            "fineprint": ('<a href="https://www.locurio.com/outdoor-escape-game-mysteries-of-noximillian/">'
+                          "Mysteries of Noximillian</a> &mdash; date to be chosen by the birthday pirate."),
         },
         "gate": {
             "question": ("One more riddle before ye go. She's loved ye for a thousand years. "
@@ -180,7 +182,8 @@ PAGES = [
         "gift": {
             "name": "iFLY Indoor Skydiving &mdash; Seattle",
             "body": "Ye'll leave the deck entirely, ye magnificent airborne pirate.",
-            "fineprint": ("Holder may exchange for one (1) less terrifying adventure. "
+            "fineprint": ('<a href="https://www.iflyworld.com/seattle">iflyworld.com/seattle</a> &mdash; '
+                          "Holder may exchange for one (1) less terrifying adventure. "
                           "No questions asked, minimal teasin'."),
         },
         "riddle": ("Yer final treasure can't be boxed, buried, or hidden. It be warm, it be yours, "
@@ -336,7 +339,7 @@ def render(page):
     if page.get("gift"):
         g = page["gift"]
         out.append('  <section class="booty">\n')
-        out.append('    <div class="booty-label">&#9760; Booty Unlocked &#9760;</div>\n')
+        out.append('    <div class="booty-label">&#9760; Treasure Found &#9760;</div>\n')
         out.append(f'    <h2>{g["name"]}</h2>\n')
         out.append(f'    <p>{g["body"]}</p>\n')
         out.append(f'    <p class="fineprint">{g["fineprint"]}</p>\n')

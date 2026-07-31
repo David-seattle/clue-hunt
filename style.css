@@ -189,6 +189,11 @@ h1 {
   color: var(--ink-soft);
 }
 
+.booty a {
+  color: var(--wax);
+  text-decoration-color: rgba(140, 43, 26, 0.5);
+}
+
 #gate { margin-top: 1rem; }
 
 #gate input {
