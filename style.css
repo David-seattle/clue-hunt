@@ -189,6 +189,33 @@ h1 {
   color: var(--ink-soft);
 }
 
+.hint {
+  margin-top: 0.9rem;
+}
+
+.hint summary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px dashed var(--gold);
+  padding-bottom: 0.1rem;
+}
+
+.hint summary::-webkit-details-marker { display: none; }
+
+.hint[open] summary { color: var(--wax); border-color: var(--wax); }
+
+.hint p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
 .booty a {
   color: var(--wax);
   text-decoration-color: rgba(140, 43, 26, 0.5);
