@@ -58,7 +58,7 @@ body {
   pointer-events: none;
 }
 
-.parchment > *:not(.compass) { position: relative; }
+.parchment > *:not(.compass):not(.seal) { position: relative; }
 
 .seal {
   position: absolute;
