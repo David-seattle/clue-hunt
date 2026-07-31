@@ -73,8 +73,7 @@ PAGES = [
         "icon": "📜",
         "title": "The Mail Run",
         "flavor": "No stamps needed where ye're goin'.",
-        "riddle": ("A voyage like this calls for a draught o' mead. Fetch yer tankard from "
-                   "the cupboard and drink deep &mdash; bottoms up, sailor."),
+        "riddle": "A voyage like this calls for a draught o' mead. Bottoms up, sailor.",
     },
     {
         "slug": "7fd44344",
