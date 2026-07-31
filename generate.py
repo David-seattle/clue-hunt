@@ -79,7 +79,7 @@ PAGES = [
         },
         "riddle": ("There be a thin mouth in the wall that swallows whatever strangers put in it. "
                    "It never bites, and today its belly holds more than usual."),
-        "hint": "Only 82 cents to put yours inside.",
+        "hint": "Only 82 cents to forever put yours inside.",
         "layout": ("center", "center", -1.5, 78, 16),
         "bg": (100, 0),
     },
