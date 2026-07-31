@@ -122,7 +122,7 @@
     if (ctx.state === 'suspended') ctx.resume();
     var dest = out || ctx.destination;
     function strike(t0) {
-      var partials = [[830, 0.4], [1245, 0.22], [2075, 0.1]];
+      var partials = [[830, 1.0], [1245, 0.55], [2075, 0.28]];
       for (var i = 0; i < partials.length; i++) {
         var osc = ctx.createOscillator();
         var g = ctx.createGain();
@@ -143,10 +143,7 @@
   function makeOverlay() {
     var ov = document.createElement('div');
     ov.id = 'furl';
-    ov.innerHTML =
-      '<div class="furl-half furl-top"><div class="furl-paper"></div><div class="furl-rod"></div></div>' +
-      '<div class="furl-half furl-bottom"><div class="furl-rod"></div><div class="furl-paper"></div></div>' +
-      '<div class="furl-label">Tap to unfurl yer chart</div>';
+    ov.innerHTML = '<div class="furl-label">Tap to unfurl yer chart</div>';
     document.body.appendChild(ov);
     document.body.classList.add('furled');
     ov.addEventListener('pointerdown', function () {

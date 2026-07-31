@@ -289,73 +289,37 @@ body.furled { overflow: hidden; }
 body.furled #content,
 body.furled .scene { visibility: hidden; }
 
+body.furled .note { animation: none; }
+
 #furl {
   position: fixed;
   inset: 0;
   z-index: 50;
   cursor: pointer;
-}
-
-.furl-half {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 50%;
+  background: url("scroll-intro.jpg") center / cover no-repeat #241708;
+  transition: opacity 0.9s ease, transform 0.9s ease;
   display: flex;
-  flex-direction: column;
-  transition: transform 0.95s cubic-bezier(0.65, 0, 0.35, 1);
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 12vh;
 }
 
-.furl-top { top: 0; }
-.furl-bottom { bottom: 0; }
-
-#furl.open .furl-top { transform: translateY(-102%); }
-#furl.open .furl-bottom { transform: translateY(102%); }
-
-/* The back of the rolled chart: aged parchment, darker than the face. */
-.furl-paper {
-  flex: 1;
-  /* The chart's ink faintly bleeding through the back of the rolled paper. */
-  background:
-    radial-gradient(circle at 80% 15%, rgba(94, 60, 22, 0.28), transparent 30%),
-    radial-gradient(circle at 15% 70%, rgba(94, 60, 22, 0.22), transparent 35%),
-    linear-gradient(180deg, rgba(210, 185, 130, 0.88), rgba(198, 170, 110, 0.86)),
-    url("map-illustration.jpg") center / cover no-repeat #cdb47c;
-}
-
-.furl-top .furl-paper { background-position: center, center, center, 50% 0%; }
-.furl-bottom .furl-paper { background-position: center, center, center, 50% 100%; }
-
-.furl-top .furl-paper { box-shadow: inset 0 -2rem 3rem rgba(58, 36, 12, 0.35); }
-.furl-bottom .furl-paper { box-shadow: inset 0 2rem 3rem rgba(58, 36, 12, 0.35); }
-
-/* Wound roller at the seam: wood core with paper wraps suggested by stripes. */
-.furl-rod {
-  height: 2.4rem;
-  background:
-    repeating-linear-gradient(180deg,
-      rgba(35, 20, 6, 0) 0, rgba(35, 20, 6, 0.3) 3px, rgba(35, 20, 6, 0) 6px),
-    linear-gradient(180deg, #6b4a24 0%, #c9a86a 28%, #8a6636 65%, #3d2a12 100%);
-  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.55);
+/* Tap: the camera pushes into the scroll as it gives way to the open chart. */
+#furl.open {
+  opacity: 0;
+  transform: scale(1.35);
+  pointer-events: none;
 }
 
 .furl-label {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, 0);
-  margin-top: 3.4rem;
   font-family: 'Pirata One', cursive;
-  font-size: 1.5rem;
-  white-space: nowrap;
+  font-size: 1.6rem;
   color: #f3e0c8;
-  text-shadow: 0 2px 6px rgba(23, 14, 4, 0.8);
+  text-shadow: 0 2px 8px rgba(23, 14, 4, 0.9);
   letter-spacing: 0.05em;
   animation: beckon 1.8s ease-in-out infinite;
   pointer-events: none;
 }
-
-#furl.open .furl-label { display: none; }
 
 @keyframes beckon {
   0%, 100% { opacity: 0.65; }
@@ -363,6 +327,5 @@ body.furled .scene { visibility: hidden; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .furl-half { transition-duration: 0.15s; }
-  .furl-label { animation: none; }
+    .furl-label { animation: none; }
 }
