@@ -48,7 +48,7 @@ PAGES = [
         "mark": "II",
         "icon": "🧭",
         "title": "Well Navigated, Matey",
-        "flavor": "The keys sang true. Yer next headin':",
+        "flavor": "The keys sang true.",
         "riddle": "Find David at his fittest.",
     },
     {
@@ -60,11 +60,11 @@ PAGES = [
         "gift": {
             "name": "Certificate o' the Lamplighter",
             "body": ("One bedside lamp, restored to full workin' glory by yer ship's engineer. "
-                     "Redeemable any Saturday."),
+                     "Redeemable anytime."),
             "fineprint": "Labor guaranteed by a man with a multimeter.",
         },
-        "riddle": ("I stand watch outside all day, waitin' for a stranger to feed me paper. "
-                   "Plunderin' me is a federal crime &mdash; but today, ye carry a letter of marque."),
+        "riddle": ("There be a thin mouth in the wall that swallows whatever strangers slip it. "
+                   "It never chews &mdash; and today its belly holds more than usual."),
     },
     {
         "slug": "211bd549",
@@ -225,7 +225,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="stylesheet" href="../../style.css">
 </head>
 <body{body_class}>
-<main class="parchment">
+<main class="parchment" style="--mx:{mx}%;--my:{my}%">
   <svg class="compass" viewBox="0 0 100 100" aria-hidden="true">
     <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="1"/>
     <circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width="0.5"/>
@@ -281,9 +281,25 @@ GATE_JS = """<script>
 """
 
 
+# Serpentine walk across the shared map, so consecutive stops show adjacent
+# fragments of one big chart. Decoys get leftover mid-map fragments.
+TRAIL_FRAGMENTS = [(0, 0), (33, 0), (66, 0), (100, 0), (100, 50), (66, 50),
+                   (33, 50), (0, 50), (0, 100), (33, 100), (66, 100), (100, 100)]
+DECOY_FRAGMENTS = [(50, 25), (25, 75), (75, 75)]
+
+
+def fragment_for(page):
+    decoys = [p for p in PAGES if p.get("decoy")]
+    if page.get("decoy"):
+        return DECOY_FRAGMENTS[decoys.index(page) % len(DECOY_FRAGMENTS)]
+    trail = [p for p in PAGES if not p.get("decoy")]
+    return TRAIL_FRAGMENTS[trail.index(page) % len(TRAIL_FRAGMENTS)]
+
+
 def render(page):
     body_class = ' class="decoy-page"' if page.get("decoy") else ""
-    out = [HEAD.format(title=html.escape(page["title"]), body_class=body_class)]
+    mx, my = fragment_for(page)
+    out = [HEAD.format(title=html.escape(page["title"]), body_class=body_class, mx=mx, my=my)]
     if page.get("mark"):
         out.append(f'  <div class="seal"><span>{page["mark"]}</span></div>\n')
     out.append(f'  <div class="icon" aria-hidden="true">{page["icon"]}</div>\n')

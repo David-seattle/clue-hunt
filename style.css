@@ -28,7 +28,10 @@ body {
   width: min(34rem, 100%);
   text-align: center;
   padding: 3.5rem 2rem 2.75rem;
+  /* Top layer: a fragment of the shared treasure map (each page positions its own
+     region via --mx/--my). Bottom layer: the parchment itself. */
   background:
+    url("map.svg") var(--mx, 50%) var(--my, 50%) / 280% no-repeat,
     radial-gradient(ellipse at 30% 20%, #f0e3c0 0%, var(--parchment) 55%, #dcc794 100%);
   /* Uneven radii fake a torn-parchment edge without images. */
   border-radius: 3% 6% 5% 4% / 5% 3% 6% 4%;
@@ -111,10 +114,24 @@ h1 {
 }
 
 .rope {
-  margin: 1.6rem auto;
+  margin: 1.7rem auto;
   width: 70%;
-  border-top: 3px dashed var(--gold);
-  opacity: 0.55;
+  height: 1px;
+  position: relative;
+  background: linear-gradient(90deg,
+    transparent, rgba(92, 74, 44, 0.45) 15%, rgba(92, 74, 44, 0.45) 42%, transparent 45%,
+    transparent 55%, rgba(92, 74, 44, 0.45) 58%, rgba(92, 74, 44, 0.45) 85%, transparent);
+}
+
+.rope::after {
+  content: '\2715';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--wax);
+  font-size: 1.05rem;
+  opacity: 0.8;
 }
 
 .riddle {
