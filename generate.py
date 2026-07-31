@@ -169,8 +169,8 @@ PAGES = [
         "mark": "X",
         "title": "The Crow's Nest",
         "flavor": "Ye've climbed the riggin'. Now:",
-        "riddle": ("Search where ye'd rather be right now: dead tired, face first, lights out. "
-                   "Dig, sailor."),
+        "riddle": ("Dead tired men tell no tales. Uncover the treasure, or ye'll be "
+                   "sleeping with the fishes."),
         "layout": ("start", "start", 2.4, 70, 66),
         "bg": (25, 25),
     },
