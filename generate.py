@@ -194,7 +194,7 @@ PAGES = [
         "slug": "3a260eec",
         "hide_at": "Bed (under the covers)",
         "mark": "XI",
-        "title": "Booty the Third: Ye're Going FLYING",
+        "title": "Booty the Third!",
         "gift": {
             "name": "iFLY Indoor Skydiving &mdash; Seattle",
             "body": "Ye'll leave the deck entirely, ye magnificent airborne pirate.",
