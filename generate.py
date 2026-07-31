@@ -197,7 +197,7 @@ PAGES = [
         "title": "Booty the Third!",
         "gift": {
             "name": "iFLY Indoor Skydiving &mdash; Seattle",
-            "body": "Ye'll leave the deck entirely, ye magnificent airborne pirate.",
+            "body": "Ye'll leave the deck entirely, but not too far, ye sexy airborne pirate.",
             "fineprint": ('<a href="https://www.iflyworld.com/seattle">iflyworld.com/seattle</a> &mdash; '
                           "Holder may exchange for one (1) less terrifying adventure. "
                           "No questions asked, minimal teasin'."),
