@@ -296,7 +296,7 @@ body.furled .note { animation: none; }
   inset: 0;
   z-index: 50;
   cursor: pointer;
-  background: url("scroll-intro.jpg") center / cover no-repeat #241708;
+  background: url("scroll-intro.jpg?v=2") center / cover no-repeat #241708;
   transition: opacity 0.9s ease, transform 0.9s ease;
   display: flex;
   align-items: flex-end;
