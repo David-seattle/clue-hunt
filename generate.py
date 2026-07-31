@@ -148,7 +148,7 @@ PAGES = [
         "title": "About Time, Sailor",
         "flavor": "A fine film, a finer memory.",
         "riddle": ("Captain a ship on the hunt for the underwater metal beast. "
-                   "Ye'll need a crew of 2 to 8."),
+                   "Can you find a crew of 8?"),
         "hint": "2 to 8 players.",
         "layout": ("end", "end", 1.6, 28, 14),
         "bg": (50, 100),
