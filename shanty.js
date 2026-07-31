@@ -13,32 +13,47 @@
   var LEAD = window._tone_0210_Aspirin_sf2_file;
   var BASSFONT = window._tone_0250_Aspirin_sf2_file;
 
-  var EIGHTH = 0.21; /* ~143bpm eighths — a brisk rowing pace */
+  var EIGHTH = 0.25; /* 120bpm quarters — a steady rowing pace */
 
-  /* [midi, eighths]; 0 = rest. D minor. */
-  var A2 = 45, C3 = 48, D3 = 50, F3 = 53, G3 = 55;
-  var A3 = 57, C4 = 60, D4 = 62, E4 = 64, F4 = 65, G4 = 67, A4 = 69, C5 = 72;
+  /* [midi, eighths]; 0 = rest. The Wellerman in E minor, transcribed from the
+   * ABC setting at thesession.org/tunes/20383 (setting 2): 2/4, L=1/8. */
+  var E4 = 64, Fs4 = 66, G4 = 67, A4 = 69, B4 = 71, C5 = 72, D5 = 74, E5 = 76;
   var MELODY = [
+    /* pickup */
+    [B4, 2],
     /* There once was a ship that put to sea */
-    [A3, 1], [D4, 1], [D4, 1], [D4, 1], [D4, 1], [F4, 1], [E4, 1], [D4, 2],
-    /* and the name of the ship was the Billy of Tea */
-    [E4, 1], [E4, 1], [E4, 1], [E4, 1], [E4, 1], [A3, 1], [C4, 1], [C4, 1], [A3, 2],
+    [E4, 2], [E4, 1], [E4, 1], [E4, 2], [G4, 1], [G4, 1],
+    [B4, 2], [B4, 2], [B4, 2], [B4, 1], [B4, 1],
+    /* the name of the ship was the Billy of Tea */
+    [C5, 2], [A4, 1], [A4, 1], [A4, 2], [C5, 1], [C5, 1],
+    [E5, 1], [E5, 1], [B4, 2], [B4, 2],
     /* the winds blew up, her bow dipped down */
-    [A3, 1], [D4, 1], [D4, 1], [D4, 1], [D4, 1], [F4, 1], [A4, 1], [A4, 2],
+    [B4, 2],
+    [E4, 2], [Fs4, 1], [Fs4, 1], [G4, 2], [A4, 1], [A4, 1],
+    [B4, 2], [B4, 2], [B4, 2], [B4, 1], [B4, 1],
     /* oh blow, my bully boys, blow */
-    [G4, 1], [G4, 1], [E4, 1], [C4, 1], [D4, 3], [0, 1],
+    [C5, 2], [A4, 2], [G4, 1], [G4, 1], [Fs4, 2],
+    [E4, 6], [0, 2],
     /* Soon may the Wellerman come */
-    [F4, 1], [F4, 1], [A4, 1], [A4, 1], [A4, 1], [A4, 2],
+    [E5, 4], [E5, 3], [C5, 1],
     /* to bring us sugar and tea and rum */
-    [G4, 1], [G4, 1], [G4, 1], [G4, 1], [E4, 1], [C4, 1], [C4, 2],
+    [D5, 1], [D5, 1], [G4, 2], [G4, 3], [G4, 1],
     /* one day when the tonguing is done */
-    [D4, 1], [F4, 1], [F4, 1], [F4, 1], [F4, 1], [A4, 1], [C5, 2],
+    [C5, 2], [A4, 2], [A4, 1], [B4, 1], [C5, 2],
     /* we'll take our leave and go */
-    [A4, 1], [G4, 1], [E4, 1], [C4, 1], [D4, 4],
+    [B4, 2], [G4, 2], [E4, 4],
+    /* chorus, second half */
+    [E5, 4], [E5, 2], [D5, 1], [C5, 1],
+    [D5, 1], [D5, 1], [G4, 2], [G4, 2], [G4, 2],
+    [B4, 2], [A4, 2], [G4, 2], [Fs4, 2],
+    [E4, 5], [0, 1],
   ];
-  /* Bass roots, one per 4 eighths; padded/looped to the melody length. */
-  var BASS = [D3, A2, D3, A2, C3, A2, C3, D3, D3, A2, D3, F3, C3, C3, D3, D3,
-              F3, F3, C3, C3, D3, D3, F3, G3, C3, C3, D3, D3];
+  /* Chord roots, one per 4 eighths, following Em / Am / B / C / G harmony. */
+  var E2 = 40, G2 = 43, A2 = 45, B2 = 47, C3 = 48;
+  var BASS = [E2, E2, E2, B2, A2, A2, E2, B2,
+              E2, E2, B2, B2, A2, B2, E2, E2,
+              C3, C3, G2, G2, A2, A2, E2, E2,
+              C3, C3, G2, G2, B2, B2, E2, E2];
 
   function scheduleLoop(t0) {
     var t = t0, total = 0, i;
