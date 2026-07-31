@@ -31,6 +31,10 @@ KEYS = {
     "0b94076d": "71d2cc698190",
     "6ef5d9a2": "034bd1cf49a8",
     "877274df": "0dfaadfe3481",
+    "cb5b5963": "82b94935dc72",
+    "2c997fc1": "85664864ea4e",
+    "b2855fec": "40c8dfcc7ada",
+    "0e346673": "2d898ebbf909",
 }
 
 # layout: (note_h, note_v, tilt_deg, x_pct, y_pct) — note grid position, note tilt,
@@ -47,7 +51,7 @@ PAGES = [
                    "Stops: unknown. Booty: plentiful. Mutiny: discouraged."),
         "riddle": ("The key to your treasure is a <em>quiet</em> Italian, ticklish, "
                    "but not your boyfriend."),
-        "hint": "Something in this house sings when its teeth are tickled.",
+        "hint": "There be many keys to this treasure.",
         "layout": ("center", "start", -2.4, 33, 82),
         "bg": (0, 0),
     },
@@ -58,7 +62,7 @@ PAGES = [
         "title": "Well Navigated, Matey",
         "flavor": "The keys sang true.",
         "riddle": "Find David at his fittest.",
-        "hint": "Not the David who lives here. Michelangelo knew this one well.",
+        "hint": "This David be stone cold.",
         "layout": ("end", "start", 1.8, 18, 72),
         "bg": (50, 0),
     },
@@ -75,7 +79,7 @@ PAGES = [
         },
         "riddle": ("There be a thin mouth in the wall that swallows whatever strangers slip it. "
                    "It never chews &mdash; and today its belly holds more than usual."),
-        "hint": "Strangers feed it almost every day &mdash; but never on Sundays.",
+        "hint": "Ye can pay a stranger 82 cents to feed it.",
         "layout": ("center", "center", -1.5, 78, 16),
         "bg": (100, 0),
     },
@@ -86,7 +90,7 @@ PAGES = [
         "title": "The Mail Run",
         "flavor": "No stamps needed where ye're goin'.",
         "riddle": "A voyage like this calls for a draught o' mead. Bottoms up, sailor.",
-        "hint": "What would ye pour the mead INTO? Check where those live.",
+        "hint": "Pour in here, and bottoms up.",
         "layout": ("start", "start", 2.2, 72, 78),
         "bg": (100, 50),
     },
@@ -98,7 +102,7 @@ PAGES = [
         "flavor": "Not every tankard holds mead. This one held yer next headin'.",
         "riddle": ("Yer next clue lies waiting to be wrapped or rolled, chillin' quietly "
                    "with its identical siblings. Let us see if you can find it."),
-        "hint": "Think burrito night.",
+        "hint": "Circles.",
         "layout": ("end", "center", -1.8, 22, 18),
         "bg": (50, 50),
     },
@@ -112,8 +116,8 @@ PAGES = [
             "question": "What color be the cloth beneath the two figs?",
             "answers": ["red"],
             "placeholder": "one word",
-            "hint": "There be a painting in this house with two figs in it. Look close at what they rest upon.",
-            "unlocked_hint": "What turns white socks pink?",
+            "hint": "This one be artistic.",
+            "unlocked_hint": "Use cold.",
             "unlocked": "Now find where red things go to ruin white things.",
         },
         "layout": ("center", "start", 1.2, 80, 82),
@@ -129,8 +133,8 @@ PAGES = [
             "question": "That ship had a woman on the crew. How many jobs did she have?",
             "answers": ["one", "1"],
             "placeholder": "how many?",
-            "hint": "By Grabthar&rsquo;s hammer&hellip; the answer be in the movie ye watched that night.",
-            "unlocked_hint": "Check yer movie shelf for a time traveler.",
+            "hint": "By Grabthar&rsquo;s hammer&hellip;",
+            "unlocked_hint": "Grab the Kleenex and the popcorn.",
             "unlocked": ("Some souls would relive an ordinary day just to get it right. "
                          "We watched him do it. Yer clue sleeps in his case."),
         },
@@ -145,7 +149,7 @@ PAGES = [
         "flavor": "A fine film, a finer memory.",
         "riddle": ("Captain a ship on the hunt for the underwater metal beast. "
                    "Ye'll need a crew of 2 to 8."),
-        "hint": "It be a game in a box. Where do those get stowed?",
+        "hint": "A game for 2 to 8 players.",
         "layout": ("end", "end", 1.6, 28, 14),
         "bg": (50, 100),
     },
@@ -167,8 +171,8 @@ PAGES = [
                          "or the internet)"),
             "answers": ["one step closer", "closer"],
             "placeholder": "three words",
-            "hint": "Christina Perri has been singin' it to ye for a thousand years.",
-            "unlocked_hint": "It spins above ye. Ye may need a chair, sailor.",
+            "hint": "These people sparkle on the peninsula.",
+            "unlocked_hint": "When others need a chair, yers be within reach.",
             "unlocked": ("One step closer&hellip; now look aloft! I spin above it all like a "
                          "crow's nest, and no one ever checks me back."),
         },
@@ -183,7 +187,7 @@ PAGES = [
         "flavor": "Ye've climbed the riggin'. Now:",
         "riddle": ("Dead tired men tell no tales. Uncover the treasure, or ye'll be "
                    "sleeping with the fishes."),
-        "hint": "Where do the dead tired lie? Look under what covers them.",
+        "hint": "If ye're stuck, ye might need a rest.",
         "layout": ("start", "start", 2.4, 70, 66),
         "bg": (25, 25),
     },
@@ -202,7 +206,6 @@ PAGES = [
         "riddle": ("Yer final treasure can't be boxed, buried, or hidden. It be warm, it be yours, "
                    "and it's been pacin' the deck pretendin' not to watch ye this whole voyage. "
                    "Go claim it."),
-        "hint": "This treasure has a heartbeat.",
         "layout": ("center", "center", -1.6, 20, 84),
         "bg": (75, 25),
     },
@@ -247,6 +250,43 @@ PAGES = [
         "flavor": "The house be mockin' ye. It knows what ye did.",
         "layout": ("start", "end", -2.2, None, None),
         "bg": (50, 25),
+    },
+    {
+        "slug": "cb5b5963",
+        "hide_at": "Anywhere (decoy C)",
+        "decoy": True,
+        "title": "Arrr Ye Serious?",
+        "flavor": ("Why be pirates called pirates? Because they arrrr! "
+                   "This, however, arrrn't a clue."),
+        "layout": ("center", "start", 2.0, None, None),
+        "bg": (0, 25),
+    },
+    {
+        "slug": "2c997fc1",
+        "hide_at": "Anywhere (decoy D)",
+        "decoy": True,
+        "title": "Nacho Clue",
+        "flavor": "This be nacho clue, matey. Keep sailin'.",
+        "layout": ("end", "center", -2.6, None, None),
+        "bg": (100, 25),
+    },
+    {
+        "slug": "b2855fec",
+        "hide_at": "Anywhere (decoy E)",
+        "decoy": True,
+        "title": "Shell Shocked",
+        "flavor": "Sea-riously &mdash; nothin' here. We're all a bit shell-shocked.",
+        "layout": ("start", "center", 2.8, None, None),
+        "bg": (25, 50),
+    },
+    {
+        "slug": "0e346673",
+        "hide_at": "Anywhere (decoy F)",
+        "decoy": True,
+        "title": "Marooned",
+        "flavor": "Ye've been marooned on a clueless island. Waterever made ye look here?",
+        "layout": ("center", "end", -1.4, None, None),
+        "bg": (75, 50),
     },
 ]
 
