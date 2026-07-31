@@ -1,0 +1,51 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background: #1a1423;
+  color: #e8ddc7;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card {
+  max-width: 34rem;
+  text-align: center;
+  border: 2px solid #b8912f;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  background: #241b2f;
+  box-shadow: 0 0 40px rgba(184, 145, 47, 0.25);
+}
+
+.badge {
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #b8912f;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #f3e9d2;
+}
+
+.riddle {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  font-style: italic;
+  white-space: pre-line;
+}
+
+.hint {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #8a7f95;
+}
+
+.emoji { font-size: 3rem; margin-bottom: 1rem; }
