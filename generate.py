@@ -150,7 +150,7 @@ PAGES = [
         "mark": "VIII",
         "title": "A Matter o' Duty",
         "gate": {
-            "question": ("January 17th, 2026: The ship had a woman on the crew. "
+            "question": ("January 17th: The ship had a woman on the crew. "
                          "How many jobs did she have?"),
             "answers": ["one", "1"],
             "placeholder": "how many?",
@@ -168,8 +168,15 @@ PAGES = [
         "slug": "02c7edda",
         "hide_at": "About Time DVD case",
         "mark": "IX",
-        "title": "About Time, Sailor",
+        "title": "Booty the Second!",
         "flavor": "A fine film, a finer memory.",
+        "gift": {
+            "name": "The Locurio Expedition",
+            "body": ("A treasure hunt hidden inside a treasure hunt: "
+                     "Mysteries of Noximillian, an outdoor puzzle adventure. We sail together."),
+            "fineprint": ('<a href="https://www.locurio.com/outdoor-escape-game-mysteries-of-noximillian/">'
+                          "Mysteries of Noximillian</a> &mdash; date to be chosen by the birthday pirate."),
+        },
         "riddle": ("Captain a ship on the hunt for the underwater metal beast. "
                    "Can you find a crew of 8?"),
         "hint": "The treasure is boxed in.",
@@ -181,14 +188,7 @@ PAGES = [
         "slug": "642edf15",
         "hide_at": "Board game (games closet)",
         "mark": "X",
-        "title": "Booty the Second!",
-        "gift": {
-            "name": "The Locurio Expedition",
-            "body": ("A treasure hunt hidden inside a treasure hunt: "
-                     "Mysteries of Noximillian, an outdoor puzzle adventure. We sail together."),
-            "fineprint": ('<a href="https://www.locurio.com/outdoor-escape-game-mysteries-of-noximillian/">'
-                          "Mysteries of Noximillian</a> &mdash; date to be chosen by the birthday pirate."),
-        },
+        "title": "A Siren's Riddle",
         "gate": {
             "question": ("One more riddle before ye go. She's loved ye for M years. "
                          "What does every heartbeat bring? (3 words &mdash; consult yer charts, "
