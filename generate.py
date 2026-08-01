@@ -190,9 +190,8 @@ PAGES = [
         "mark": "X",
         "title": "A Siren's Riddle",
         "gate": {
-            "question": ("One more riddle before ye go. She's loved ye for M years. "
-                         "What does every heartbeat bring? (3 words &mdash; consult yer charts, "
-                         "or the internet)"),
+            "question": ("She's loved ye for M years. What does every heartbeat bring? "
+                         "(3 words &mdash; consult yer charts, or the internet)"),
             "answers": ["one step closer", "closer"],
             "placeholder": "three words",
             "hint": "These people sparkle on the peninsula.",
