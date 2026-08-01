@@ -158,8 +158,7 @@ PAGES = [
             "hint2": "By Grabthar&rsquo;s hammer&hellip;",
             "unlocked_hint": "Grab the Kleenex and the popcorn.",
             "unlocked_hint2": "A DVD case.",
-            "unlocked": ("Some souls would relive an ordinary day just to get it right. "
-                         "We watched him do it. Yer clue sleeps in his case."),
+            "unlocked": "The case of a man, reliving an ordinary day.",
         },
         "layout": ("start", "center", -2.0, 82, 22),
         "bg": (0, 100),
