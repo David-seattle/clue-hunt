@@ -90,8 +90,8 @@ PAGES = [
         "mark": "IV",
         "title": "The Mail Run",
         "flavor": "No stamps needed where ye're goin'.",
-        "riddle": ("Gaze in the mirror, ye handsome devil. Then open below &mdash; "
-                   "a bird of unusual size holds the key."),
+        "riddle": ("Gaze in the mirror, ye handsome devil. A bird of unusual size "
+                   "holds the key below."),
         "hint": "Open the drawer.",
         "layout": ("start", "start", 2.2, 72, 78),
         "bg": (100, 50),
@@ -115,7 +115,7 @@ PAGES = [
         "flavor": "Not every tankard holds mead. This one held yer next headin'.",
         "riddle": ("Yer next clue lies waiting to be wrapped or rolled, chillin' quietly "
                    "with its identical siblings. Let us see if you can find it."),
-        "hint": "Circles.",
+        "hint": "Tasty circles.",
         "layout": ("end", "center", -1.8, 22, 18),
         "bg": (50, 50),
     },
