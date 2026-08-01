@@ -154,10 +154,10 @@ PAGES = [
                          "How many jobs did she have?"),
             "answers": ["one", "1"],
             "placeholder": "how many?",
-            "hint": "The ship had a quest.",
+            "hint": "She was on a quest.",
             "hint2": "By Grabthar&rsquo;s hammer&hellip;",
             "unlocked_hint": "Grab the Kleenex and the popcorn.",
-            "unlocked_hint2": "A DVD about a time-travelin' groom.",
+            "unlocked_hint2": "A DVD case.",
             "unlocked": ("Some souls would relive an ordinary day just to get it right. "
                          "We watched him do it. Yer clue sleeps in his case."),
         },
