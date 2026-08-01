@@ -25,6 +25,7 @@
   <main class="note note-wide">
   <div class="eyebrow">Brandon&rsquo;s Treasure Hunt</div>
   <h1>A Matter o' Duty</h1>
+  <div id="quiz">
   <p class="riddle">January 17th, 2026: The ship had a woman on the crew. How many jobs did she have?</p>
   <form id="gate">
     <input id="answer" type="text" placeholder="how many?" autocomplete="off" autocapitalize="off">
@@ -32,6 +33,7 @@
     <p id="wrong" hidden>Blimey, that be wrong. Try again.</p>
   </form>
   <details class="hint"><summary>Need a hint, sailor?</summary><p>She was on a quest.</p><details class="hint hint-more"><summary>Still lost? One more hint</summary><p>By Grabthar&rsquo;s hammer&hellip;</p></details></details>
+  </div>
   <div id="reveal" hidden>
     <div class="label">The way forward</div>
     <p class="riddle">The case of a man, reliving an ordinary day.</p>
@@ -62,6 +64,7 @@
 <script>
 (function () {
   var accepted = ["one", "1"];
+  var quiz = document.getElementById('quiz');
   var form = document.getElementById('gate');
   var input = document.getElementById('answer');
   var wrong = document.getElementById('wrong');
@@ -70,8 +73,7 @@
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     if (accepted.indexOf(normalize(input.value)) !== -1) {
-      form.hidden = true;
-      wrong.hidden = true;
+      quiz.hidden = true;
       reveal.hidden = false;
       if (window.shantyBell) window.shantyBell();
     } else {

@@ -362,6 +362,7 @@ SEALED = """</div>
 GATE_JS = """<script>
 (function () {{
   var accepted = {answers};
+  var quiz = document.getElementById('quiz');
   var form = document.getElementById('gate');
   var input = document.getElementById('answer');
   var wrong = document.getElementById('wrong');
@@ -370,8 +371,7 @@ GATE_JS = """<script>
   form.addEventListener('submit', function (ev) {{
     ev.preventDefault();
     if (accepted.indexOf(normalize(input.value)) !== -1) {{
-      form.hidden = true;
-      wrong.hidden = true;
+      quiz.hidden = true;
       reveal.hidden = false;
       if (window.shantyBell) window.shantyBell();
     }} else {{
@@ -455,6 +455,7 @@ def render(page):
         out.append('  </section>\n')
     if page.get("gate"):
         gt = page["gate"]
+        out.append('  <div id="quiz">\n')
         out.append(f'  <p class="riddle">{gt["question"]}</p>\n')
         out.append('  <form id="gate">\n')
         out.append(f'    <input id="answer" type="text" placeholder="{gt["placeholder"]}" '
@@ -464,6 +465,7 @@ def render(page):
         out.append('  </form>\n')
         if gt.get("hint"):
             out.append(hint_html(gt["hint"], gt.get("hint2")))
+        out.append('  </div>\n')
         out.append('  <div id="reveal" hidden>\n')
         out.append('    <div class="label">The way forward</div>\n')
         out.append(f'    <p class="riddle">{gt["unlocked"]}</p>\n')

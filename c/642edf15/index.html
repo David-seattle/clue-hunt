@@ -32,6 +32,7 @@
     <p>A treasure hunt hidden inside a treasure hunt: Mysteries of Noximillian, an outdoor puzzle adventure. We sail together.</p>
     <p class="fineprint"><a href="https://www.locurio.com/outdoor-escape-game-mysteries-of-noximillian/">Mysteries of Noximillian</a> &mdash; date to be chosen by the birthday pirate.</p>
   </section>
+  <div id="quiz">
   <p class="riddle">One more riddle before ye go. She's loved ye for M years. What does every heartbeat bring? (3 words &mdash; consult yer charts, or the internet)</p>
   <form id="gate">
     <input id="answer" type="text" placeholder="three words" autocomplete="off" autocapitalize="off">
@@ -39,6 +40,7 @@
     <p id="wrong" hidden>Blimey, that be wrong. Try again.</p>
   </form>
   <details class="hint"><summary>Need a hint, sailor?</summary><p>These people sparkle on the peninsula.</p><details class="hint hint-more"><summary>Still lost? One more hint</summary><p>Song lyrics.</p></details></details>
+  </div>
   <div id="reveal" hidden>
     <div class="label">The way forward</div>
     <p class="riddle">One step closer&hellip; the crow's nest is often untouched.</p>
@@ -69,6 +71,7 @@
 <script>
 (function () {
   var accepted = ["onestepcloser", "closer"];
+  var quiz = document.getElementById('quiz');
   var form = document.getElementById('gate');
   var input = document.getElementById('answer');
   var wrong = document.getElementById('wrong');
@@ -77,8 +80,7 @@
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     if (accepted.indexOf(normalize(input.value)) !== -1) {
-      form.hidden = true;
-      wrong.hidden = true;
+      quiz.hidden = true;
       reveal.hidden = false;
       if (window.shantyBell) window.shantyBell();
     } else {
