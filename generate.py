@@ -53,6 +53,7 @@ PAGES = [
         "riddle": ("The key to your treasure is a <em>quiet</em> Italian, ticklish, "
                    "but not your boyfriend."),
         "hint": "There be many keys to this treasure.",
+        "hint2": "88 keys, to be exact.",
         "layout": ("center", "start", -2.4, 33, 82),
         "bg": (0, 0),
     },
@@ -64,6 +65,7 @@ PAGES = [
         "flavor": "The keys sang true.",
         "riddle": "Find David at his fittest.",
         "hint": "This David be stone cold.",
+        "hint2": "The real David be in Florence.",
         "layout": ("end", "start", 1.8, 18, 72),
         "bg": (50, 0),
     },
@@ -81,6 +83,7 @@ PAGES = [
         "riddle": ("There be a thin mouth in the wall that swallows whatever strangers put in it. "
                    "It never bites, and today its belly holds more than usual."),
         "hint": "Only 82 cents to forever put yours inside.",
+        "hint2": "One man puts his junk in here almost every day.",
         "layout": ("center", "center", -1.5, 78, 16),
         "bg": (100, 0),
     },
@@ -93,6 +96,7 @@ PAGES = [
         "riddle": ("Gaze in the mirror, ye handsome devil. A bird of unusual size "
                    "holds the key below."),
         "hint": "Open the drawer.",
+        "hint2": "Not in a bathroom.",
         "layout": ("start", "start", 2.2, 72, 78),
         "bg": (100, 50),
     },
@@ -103,7 +107,8 @@ PAGES = [
         "title": "A Handsome Pirate Indeed",
         "flavor": "The mirror never lies, and the drawer never disappoints.",
         "riddle": "A voyage like this calls for a draught o' mead. Bottoms up, sailor.",
-        "hint": "Pour in here, and bottoms up.",
+        "hint": "Head to the galley.",
+        "hint2": "Pour in here, and bottoms up.",
         "layout": ("center", "start", 1.4, 25, 72),
         "bg": (25, 0),
     },
@@ -113,9 +118,10 @@ PAGES = [
         "mark": "VI",
         "title": "Bottoms Up!",
         "flavor": "Not every tankard holds mead. This one held yer next headin'.",
-        "riddle": ("Yer next clue lies waiting to be wrapped or rolled, chillin' quietly "
-                   "with its identical siblings. Let us see if you can find it."),
+        "riddle": ("Let us see if you can find yer next clue, waiting to be wrapped "
+                   "or rolled, chillin' with its siblings."),
         "hint": "Tasty circles.",
+        "hint2": "Brrr &mdash; a winter cold is blowing in.",
         "layout": ("end", "center", -1.8, 22, 18),
         "bg": (50, 50),
     },
@@ -129,8 +135,10 @@ PAGES = [
             "question": "What color be the cloth beneath the two figs?",
             "answers": ["red"],
             "placeholder": "one word",
-            "hint": "This one be artistic.",
-            "unlocked_hint": "Use cold.",
+            "hint": "You can't eat these figs.",
+            "hint2": "This one be artistic.",
+            "unlocked_hint": "Cold is best.",
+            "unlocked_hint2": "Pick a spin, not a tumble.",
             "unlocked": "Now find where red things go to ruin white things.",
         },
         "layout": ("center", "start", 1.2, 80, 82),
@@ -142,12 +150,14 @@ PAGES = [
         "mark": "VIII",
         "title": "A Matter o' Duty",
         "gate": {
-            "question": ("January 17th, 2026: That ship had a woman on the crew. "
+            "question": ("January 17th, 2026: The ship had a woman on the crew. "
                          "How many jobs did she have?"),
             "answers": ["one", "1"],
             "placeholder": "how many?",
-            "hint": "By Grabthar&rsquo;s hammer&hellip;",
+            "hint": "The ship had a quest.",
+            "hint2": "By Grabthar&rsquo;s hammer&hellip;",
             "unlocked_hint": "Grab the Kleenex and the popcorn.",
+            "unlocked_hint2": "A DVD about a time-travelin' groom.",
             "unlocked": ("Some souls would relive an ordinary day just to get it right. "
                          "We watched him do it. Yer clue sleeps in his case."),
         },
@@ -162,7 +172,8 @@ PAGES = [
         "flavor": "A fine film, a finer memory.",
         "riddle": ("Captain a ship on the hunt for the underwater metal beast. "
                    "Can you find a crew of 8?"),
-        "hint": "2 to 8 players.",
+        "hint": "The treasure is boxed in.",
+        "hint2": "2 to 8 players.",
         "layout": ("end", "end", 1.6, 28, 14),
         "bg": (50, 100),
     },
@@ -185,7 +196,9 @@ PAGES = [
             "answers": ["one step closer", "closer"],
             "placeholder": "three words",
             "hint": "These people sparkle on the peninsula.",
+            "hint2": "Song lyrics.",
             "unlocked_hint": "A swarthy mate like you needs no chair.",
+            "unlocked_hint2": "Watch out for the dust.",
             "unlocked": "One step closer&hellip; the crow's nest is often untouched.",
         },
         "layout": ("center", "center", -1.2, 86, 60),
@@ -200,6 +213,7 @@ PAGES = [
         "riddle": ("Dead tired men tell no tales. Uncover the treasure, or ye'll be "
                    "sleeping with the fishes."),
         "hint": "If ye're stuck, ye might need a rest.",
+        "hint2": "Uncover the foot.",
         "layout": ("start", "start", 2.4, 70, 66),
         "bg": (25, 25),
     },
@@ -407,9 +421,13 @@ CHEST_SVG = ('<svg class="chest" viewBox="0 0 64 50" aria-hidden="true">'
              '</g></svg>')
 
 
-def hint_html(text):
+def hint_html(text, text2=None):
+    more = ''
+    if text2:
+        more = ('<details class="hint hint-more"><summary>Still lost? One more hint</summary>'
+                f'<p>{text2}</p></details>')
     return ('  <details class="hint"><summary>Need a hint, sailor?</summary>'
-            f'<p>{text}</p></details>\n')
+            f'<p>{text}</p>{more}</details>\n')
 
 def render(page):
     h, v, tilt, xx, xy = page["layout"]
@@ -446,19 +464,19 @@ def render(page):
         out.append('    <p id="wrong" hidden>Blimey, that be wrong. Try again.</p>\n')
         out.append('  </form>\n')
         if gt.get("hint"):
-            out.append(hint_html(gt["hint"]))
+            out.append(hint_html(gt["hint"], gt.get("hint2")))
         out.append('  <div id="reveal" hidden>\n')
         out.append('    <div class="label">The way forward</div>\n')
         out.append(f'    <p class="riddle">{gt["unlocked"]}</p>\n')
         if gt.get("unlocked_hint"):
-            out.append(hint_html(gt["unlocked_hint"]))
+            out.append(hint_html(gt["unlocked_hint"], gt.get("unlocked_hint2")))
         out.append('  </div>\n')
     elif page.get("riddle"):
         if page.get("gift"):
             out.append('    <div class="label">Yer next headin&rsquo;</div>\n')
         out.append(f'  <p class="riddle">{page["riddle"]}</p>\n')
         if page.get("hint"):
-            out.append(hint_html(page["hint"]))
+            out.append(hint_html(page["hint"], page.get("hint2")))
     if page.get("closing"):
         out.append(f'  <p class="closing">{page["closing"]}</p>\n')
     out.append('  </main>\n</div>\n')

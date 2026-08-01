@@ -329,3 +329,7 @@ body.furled .note { animation: none; }
 @media (prefers-reduced-motion: reduce) {
     .furl-label { animation: none; }
 }
+
+.hint-more { margin-top: 0.6rem; }
+
+.hint-more summary { font-size: 0.66rem; }
