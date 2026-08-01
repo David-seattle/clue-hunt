@@ -158,7 +158,7 @@ PAGES = [
             "hint2": "By Grabthar&rsquo;s hammer&hellip;",
             "unlocked_hint": "Grab the Kleenex and the popcorn.",
             "unlocked_hint2": "A DVD case.",
-            "success": "A smart pirate ye are! Now you've got one job to do.",
+            "success": "A smart pirate ye are! Now ye got one job to do.",
             "unlocked": "The case of a man, reliving an ordinary day.",
         },
         "layout": ("start", "center", -2.0, 82, 22),
