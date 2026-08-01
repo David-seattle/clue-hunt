@@ -158,6 +158,7 @@ PAGES = [
             "hint2": "By Grabthar&rsquo;s hammer&hellip;",
             "unlocked_hint": "Grab the Kleenex and the popcorn.",
             "unlocked_hint2": "A DVD case.",
+            "success": "A smart pirate ye are! Now you've got one job to do.",
             "unlocked": "The case of a man, reliving an ordinary day.",
         },
         "layout": ("start", "center", -2.0, 82, 22),
@@ -467,7 +468,10 @@ def render(page):
             out.append(hint_html(gt["hint"], gt.get("hint2")))
         out.append('  </div>\n')
         out.append('  <div id="reveal" hidden>\n')
-        out.append('    <div class="label">The way forward</div>\n')
+        if gt.get("success"):
+            out.append(f'    <p class="flavor">{gt["success"]}</p>\n')
+        else:
+            out.append('    <div class="label">The way forward</div>\n')
         out.append(f'    <p class="riddle">{gt["unlocked"]}</p>\n')
         if gt.get("unlocked_hint"):
             out.append(hint_html(gt["unlocked_hint"], gt.get("unlocked_hint2")))
