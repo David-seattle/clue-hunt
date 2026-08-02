@@ -35,6 +35,7 @@ KEYS = {
     "2c997fc1": "85664864ea4e",
     "b2855fec": "40c8dfcc7ada",
     "0e346673": "2d898ebbf909",
+    "b59e0e75": "74ed3c4b8148",
     "41067d29": "856816a215fa",
     "73f71481": "e6e631492322",
 }
@@ -330,6 +331,15 @@ PAGES = [
         "flavor": "Whale, whale, whale&hellip; what have we here? Nothin'.",
         "layout": ("center", "end", -1.4, None, None),
         "bg": (75, 50),
+    },
+    {
+        "slug": "b59e0e75",
+        "hide_at": "Mount Gay rum bottle (decoy)",
+        "decoy": True,
+        "title": "Not Yer Clue&hellip;",
+        "flavor": "&hellip;but mark me words, sailor: this WILL be happenin' later.",
+        "layout": ("center", "start", -2.0, None, None),
+        "bg": (0, 75),
     },
 ]
 

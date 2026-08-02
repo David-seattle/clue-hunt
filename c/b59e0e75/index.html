@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏴&#8205;☠️</text></svg>">
+<title>Not Yer Clue&amp;hellip;</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../webaudiofont/WebAudioFontPlayer.js" defer></script>
+<script src="../../webaudiofont/0210_Aspirin_sf2_file.js" defer></script>
+<script src="../../webaudiofont/0250_Aspirin_sf2_file.js" defer></script>
+<script src="../../shanty.js" defer></script>
+</head>
+<body class="decoy-page" style="--bx:0%;--by:75%">
+<div id="content">
+<div class="scene" style="--jc:center;--ai:start">
+<div class="note-wrap" style="--tilt:-2.0deg">
+  <main class="note">
+  <div class="eyebrow">Brandon&rsquo;s Treasure Hunt</div>
+  <h1>Not Yer Clue&hellip;</h1>
+  <p class="flavor">&hellip;but mark me words, sailor: this WILL be happenin' later.</p>
+  </main>
+</div>
+</div>
+</div>
+<div class="scene" id="sealed-scene" hidden>
+  <div class="note-wrap">
+    <div class="pin"><span>&#128274;</span></div>
+    <main class="note">
+      <div class="eyebrow">Brandon&rsquo;s Treasure Hunt</div>
+      <h1>This Scroll Be Sealed</h1>
+      <p class="riddle">The wax holds fast. Only the true mark breaks it &mdash; go scan a proper QR code, ye sneaky dog.</p>
+    </main>
+  </div>
+</div>
+<script>
+(function () {
+  if (new URLSearchParams(location.search).get('k') !== '74ed3c4b8148') {
+    document.getElementById('content').hidden = true;
+    document.getElementById('sealed-scene').hidden = false;
+  }
+})();
+</script>
+</body>
+</html>
