@@ -36,6 +36,7 @@ KEYS = {
     "b2855fec": "40c8dfcc7ada",
     "0e346673": "2d898ebbf909",
     "41067d29": "856816a215fa",
+    "73f71481": "e6e631492322",
 }
 
 # layout: (note_h, note_v, tilt_deg, x_pct, y_pct) — note grid position, note tilt,
@@ -118,17 +119,35 @@ PAGES = [
         "mark": "VI",
         "title": "Bottoms Up!",
         "flavor": "Not every tankard holds mead. This one held yer next headin'.",
-        "riddle": ("Let us see if you can find yer next clue, waiting to be wrapped "
-                   "or rolled, chillin' with its siblings."),
-        "hint": "Tasty circles.",
-        "hint2": "Brrr &mdash; a winter cold is blowing in.",
+        "riddle": ("What do ye do with a drunken sailor? "
+                   "Ye have to get him drunk to find out!"),
+        "hint": "Opposite of top shelf.",
+        "hint2": "We uncork together.",
         "layout": ("end", "center", -1.8, 22, 18),
         "bg": (50, 50),
     },
     {
+        "slug": "73f71481",
+        "hide_at": "Wine drawer (fridge)",
+        "mark": "VII",
+        "title": "Booty the Second!",
+        "flavor": "Ha! Ye found the good stuff.",
+        "gift": {
+            "name": "The Captain's Reserve",
+            "body": "A sweet bottle o' wine. Ye found it, ye keep it.",
+            "fineprint": "The Captain gets a glass.",
+        },
+        "riddle": ("Let us see if you can find yer next clue, waiting to be wrapped "
+                   "or rolled, chillin' with its siblings."),
+        "hint": "Tasty circles.",
+        "hint2": "Brrr &mdash; a winter cold is blowing in.",
+        "layout": ("start", "center", -1.7, 78, 80),
+        "bg": (75, 50),
+    },
+    {
         "slug": "4c919102",
         "hide_at": "Tortilla bag (fridge/pantry)",
-        "mark": "VII",
+        "mark": "VIII",
         "title": "A Test o' Wits",
         "flavor": "Answer true, or walk the plank:",
         "gate": {
@@ -147,7 +166,7 @@ PAGES = [
     {
         "slug": "a8120a3f",
         "hide_at": "Washer (inside the drum)",
-        "mark": "VIII",
+        "mark": "IX",
         "title": "A Matter o' Duty",
         "gate": {
             "question": ("January 17th: The ship had a woman on the crew. "
@@ -167,8 +186,8 @@ PAGES = [
     {
         "slug": "02c7edda",
         "hide_at": "About Time DVD case",
-        "mark": "IX",
-        "title": "Booty the Second!",
+        "mark": "X",
+        "title": "Booty the Third!",
         "flavor": "A fine film, a finer memory.",
         "gift": {
             "name": "The Locurio Expedition",
@@ -187,7 +206,7 @@ PAGES = [
     {
         "slug": "642edf15",
         "hide_at": "Board game (games closet)",
-        "mark": "X",
+        "mark": "XI",
         "title": "A Siren's Riddle",
         "gate": {
             "question": ("She's loved ye for M years. What does every heartbeat bring? "
@@ -206,7 +225,7 @@ PAGES = [
     {
         "slug": "84d6146a",
         "hide_at": "Ceiling fan (top of a blade)",
-        "mark": "XI",
+        "mark": "XII",
         "title": "The Crow's Nest",
         "flavor": "Ye've climbed the riggin'. Now:",
         "riddle": ("Dead tired men tell no tales. Uncover the treasure, or ye'll be "
@@ -219,8 +238,8 @@ PAGES = [
     {
         "slug": "3a260eec",
         "hide_at": "Bed (under the covers)",
-        "mark": "XII",
-        "title": "Booty the Third!",
+        "mark": "XIII",
+        "title": "Booty the Fourth!",
         "gift": {
             "name": "iFLY Indoor Skydiving &mdash; Seattle",
             "body": "Ye'll leave the deck entirely, but not too far, ye sexy airborne pirate.",
