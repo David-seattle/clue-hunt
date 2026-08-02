@@ -107,17 +107,38 @@ PAGES = [
                      "Redeemable anytime."),
             "fineprint": "Labor guaranteed by a pirate with a multimeter.",
         },
-        "riddle": ("What do ye do with a drunken sailor? "
-                   "Ye have to get him drunk to find out!"),
-        "hint": "Opposite of top shelf.",
-        "hint2": "We uncork together.",
+        "riddle": ("Captain a ship on the hunt for the underwater metal beast. "
+                   "Can you find a crew of 8?"),
+        "hint": "The treasure is boxed in.",
+        "hint2": "2 to 8 players.",
         "layout": ("center", "center", -1.5, 78, 16),
         "bg": (100, 0),
     },
     {
+        "slug": "642edf15",
+        "hide_at": "Board game (games closet)",
+        "mark": "VI",
+        "title": "A Siren's Riddle",
+        "gate": {
+            "question": ("She's loved ye for M years. What does every heartbeat bring? "
+                         "(3 words &mdash; consult yer charts, or the internet)"),
+            "answers": ["one step closer", "closer"],
+            "placeholder": "three words",
+            "hint": "These people sparkle on the peninsula.",
+            "hint2": "Song lyrics.",
+            "unlocked_hint": "Opposite of top shelf.",
+            "unlocked_hint2": "We uncork together.",
+            "success": "One step closer&hellip;",
+            "unlocked": ("What do ye do with a drunken sailor? "
+                         "Ye have to get him drunk to find out!"),
+        },
+        "layout": ("center", "center", -1.2, 86, 60),
+        "bg": (100, 100),
+    },
+    {
         "slug": "73f71481",
         "hide_at": "Wine drawer (fridge)",
-        "mark": "VI",
+        "mark": "VII",
         "title": "Booty the Second!",
         "flavor": "Ha! Ye found the good stuff.",
         "gift": {
@@ -135,7 +156,7 @@ PAGES = [
     {
         "slug": "41067d29",
         "hide_at": "Hall tree drawer (front door)",
-        "mark": "VII",
+        "mark": "VIII",
         "title": "A Handsome Pirate Indeed",
         "flavor": "The mirror never lies, and the drawer never disappoints.",
         "riddle": ("Let us see if you can find yer next clue, waiting to be wrapped "
@@ -148,7 +169,7 @@ PAGES = [
     {
         "slug": "4c919102",
         "hide_at": "Tortilla bag (fridge/pantry)",
-        "mark": "VIII",
+        "mark": "IX",
         "title": "A Test o' Wits",
         "flavor": "Answer true, or walk the plank:",
         "gate": {
@@ -167,7 +188,7 @@ PAGES = [
     {
         "slug": "a8120a3f",
         "hide_at": "Washer (inside the drum)",
-        "mark": "IX",
+        "mark": "X",
         "title": "A Matter o' Duty",
         "gate": {
             "question": ("January 17th: The ship had a woman on the crew. "
@@ -187,7 +208,7 @@ PAGES = [
     {
         "slug": "02c7edda",
         "hide_at": "About Time DVD case",
-        "mark": "X",
+        "mark": "XI",
         "title": "Booty the Third!",
         "flavor": "A fine film, a finer memory.",
         "gift": {
@@ -206,36 +227,15 @@ PAGES = [
     {
         "slug": "84d6146a",
         "hide_at": "Ceiling fan (top of a blade)",
-        "mark": "XI",
+        "mark": "XII",
         "title": "The Crow's Nest",
         "flavor": "Ye've climbed the riggin'. Now:",
-        "riddle": ("Captain a ship on the hunt for the underwater metal beast. "
-                   "Can you find a crew of 8?"),
-        "hint": "The treasure is boxed in.",
-        "hint2": "2 to 8 players.",
+        "riddle": ("Dead tired men tell no tales. Uncover the treasure, or ye'll be "
+                   "sleeping with the fishes."),
+        "hint": "If ye're stuck, ye might need a rest.",
+        "hint2": "Uncover the foot.",
         "layout": ("start", "start", 2.4, 70, 66),
         "bg": (25, 25),
-    },
-    {
-        "slug": "642edf15",
-        "hide_at": "Board game (games closet)",
-        "mark": "XII",
-        "title": "A Siren's Riddle",
-        "gate": {
-            "question": ("She's loved ye for M years. What does every heartbeat bring? "
-                         "(3 words &mdash; consult yer charts, or the internet)"),
-            "answers": ["one step closer", "closer"],
-            "placeholder": "three words",
-            "hint": "These people sparkle on the peninsula.",
-            "hint2": "Song lyrics.",
-            "unlocked_hint": "If ye're stuck, ye might need a rest.",
-            "unlocked_hint2": "Uncover the foot.",
-            "success": "One step closer&hellip;",
-            "unlocked": ("Dead tired men tell no tales. Uncover the treasure, or ye'll be "
-                         "sleeping with the fishes."),
-        },
-        "layout": ("center", "center", -1.2, 86, 60),
-        "bg": (100, 100),
     },
     {
         "slug": "3a260eec",
