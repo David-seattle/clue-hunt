@@ -229,17 +229,30 @@ PAGES = [
         "mark": "XII",
         "title": "The Crow's Nest",
         "flavor": "Ye've climbed the riggin'. Now:",
-        "riddle": ("Dead tired men tell no tales. Uncover the treasure, or ye'll be "
-                   "sleeping with the fishes."),
-        "hint": "If ye're stuck, ye might need a rest.",
-        "hint2": "Uncover the foot.",
+        "riddle": ("What do ye do with a drunken sailor? "
+                   "Ye have to get him drunk to find out!"),
+        "hint": "Aged in Barbados.",
+        "hint2": "Like Captain Morgan, but more flamboyant.",
         "layout": ("start", "start", 2.4, 70, 66),
         "bg": (25, 25),
     },
     {
+        "slug": "b59e0e75",
+        "hide_at": "Mount Gay rum bottle",
+        "mark": "XIII",
+        "title": "Yo Ho Ho &mdash; a Bottle o' Rum!",
+        "flavor": "See? Told ye this'd be happenin' later.",
+        "riddle": ("Dead tired men tell no tales. Uncover the treasure, or ye'll be "
+                   "sleeping with the fishes."),
+        "hint": "If ye're stuck, ye might need a rest.",
+        "hint2": "Uncover the foot.",
+        "layout": ("center", "start", -2.0, 30, 18),
+        "bg": (0, 75),
+    },
+    {
         "slug": "3a260eec",
         "hide_at": "Bed (under the covers)",
-        "mark": "XIII",
+        "mark": "XIV",
         "title": "Booty the Fourth!",
         "gift": {
             "name": "iFLY Indoor Skydiving &mdash; Seattle",
@@ -331,15 +344,6 @@ PAGES = [
         "flavor": "Whale, whale, whale&hellip; what have we here? Nothin'.",
         "layout": ("center", "end", -1.4, None, None),
         "bg": (75, 50),
-    },
-    {
-        "slug": "b59e0e75",
-        "hide_at": "Mount Gay rum bottle (decoy)",
-        "decoy": True,
-        "title": "Not Yer Clue&hellip;",
-        "flavor": "&hellip;but mark me words, sailor: this WILL be happenin' later.",
-        "layout": ("center", "start", -2.0, None, None),
-        "bg": (0, 75),
     },
 ]
 
