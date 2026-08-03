@@ -241,7 +241,7 @@ PAGES = [
         "hide_at": "Mount Gay rum bottle",
         "mark": "XIII",
         "title": "Yo Ho Ho &mdash; a Bottle o' Rum!",
-        "flavor": "See? Told ye this'd be happenin' later.",
+        "flavor": "See? Told ye. This WILL be happenin' later, sailor.",
         "riddle": ("Dead tired men tell no tales. Uncover the treasure, or ye'll be "
                    "sleeping with the fishes."),
         "hint": "If ye're stuck, ye might need a rest.",
